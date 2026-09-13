@@ -6,7 +6,7 @@
   <title>Ibrahim Mourad Design | Interior, Exterior & Landscape Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #e8e2d8;
@@ -80,24 +80,24 @@
       flex-direction: column;
     }
 
-    /* كتابة الاسم كاملاً بنفس الخط المائل */
-    .script-title {
-      font-family: 'Caveat', cursive;
-      font-size: 62px;
-      color: var(--accent-brown);
-      margin-bottom: -18px;
-      margin-left: 4px;
-    }
-
-    /* كلمة DESIGN بالخط الهندسي العريض */
+    /* توحيد العنوان بالكامل بالخط العريض الصلب */
     .main-title {
-      font-size: 86px;
-      font-weight: 800;
-      line-height: 0.92;
-      letter-spacing: -1.5px;
+      font-size: 68px;
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.5px;
       color: var(--text-dark);
       text-transform: uppercase;
       margin-bottom: 28px;
+    }
+
+    .main-title span {
+      display: block;
+      color: var(--accent-brown);
+      font-size: 54px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-top: 4px;
     }
 
     .tagline {
@@ -143,6 +143,7 @@
       color: var(--text-dark);
     }
 
+    /* الصورة الدائرية بدون مربع أبيض */
     .hero-image-wrapper {
       display: flex;
       flex-direction: column;
@@ -197,6 +198,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
+    /* كارت الأزرار */
     .actions-card {
       max-width: 1250px;
       width: 100%;
@@ -282,8 +284,8 @@
     @media (max-width: 992px) {
       body { padding: 20px; }
       main { grid-template-columns: 1fr; text-align: center; gap: 40px; margin: 30px auto; }
-      .script-title { margin-left: 0; }
-      .main-title { font-size: 58px; }
+      .main-title { font-size: 48px; }
+      .main-title span { font-size: 38px; }
       .circle-avatar { width: 270px; height: 270px; }
       .image-container::before { top: -8px; left: -8px; right: -8px; bottom: -8px; }
       .actions-card { flex-direction: column; text-align: center; padding: 24px; }
@@ -295,17 +297,21 @@
 </head>
 <body>
 
+  <!-- الشريط العلوي -->
   <nav>
     <div>Rwaq Design Studio</div>
     <div>Ibrahim Mourad Design</div>
     <div>2026 / Portfolio</div>
   </nav>
 
+  <!-- القسم الرئيسي -->
   <main>
     <div class="hero-text">
-      <!-- الاسم كاملاً بنفس الخط -->
-      <div class="script-title">Ibrahim Mourad</div>
-      <h1 class="main-title">DESIGN</h1>
+      <!-- الاسم كاملاً بنفس الخط العريض الموحد -->
+      <h1 class="main-title">
+        IBRAHIM MOURAD
+        <span>DESIGN</span>
+      </h1>
       
       <div class="tagline">
         Interior Design • Exterior Design • Landscape • Finishing • 3D Visualization
@@ -327,6 +333,7 @@
     </div>
   </main>
 
+  <!-- أزرار الإجراءات -->
   <section class="actions-card">
     <div class="actions-text">
       <h3>Let's create something refined.</h3>
@@ -336,13 +343,13 @@
       <a href="tel:+201030273484" class="btn">Call Me</a>
       <a href="https://wa.me/201030273484" target="_blank" class="btn">WhatsApp</a>
       <a href="mailto:rwaqdesign@gmail.com" class="btn">Email</a>
-      <!-- تم توحيد اسم ملف السيرة الذاتية لـ cv.pdf -->
       <a href="cv.pdf" target="_blank" class="btn">CV / Resume</a>
       <a href="https://www.linkedin.com/" target="_blank" class="btn">LinkedIn</a>
       <a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn btn-primary">Portfolio</a>
     </div>
   </section>
 
+  <!-- التذييل -->
   <footer>
     <div>Ibrahim Mourad · Rwaq Design Studio</div>
     <div>Interior • Exterior • Landscape • 3D Visualization</div>
