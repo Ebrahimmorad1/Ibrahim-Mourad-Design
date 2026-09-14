@@ -53,7 +53,7 @@ body::before {
   background-size: 240px 240px;
 }
 
-/* Top Navigation */
+/* Top Navigation Header */
 nav {
   display: flex;
   justify-content: space-between;
@@ -71,7 +71,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   list-style: none;
   align-items: center;
 }
@@ -93,47 +93,101 @@ nav {
   color: var(--accent-brown);
 }
 
-/* Dropdown Menu Styling */
-.dropdown-content {
+/* Kelly Wearstler Style Mega Menu Dropdown */
+.mega-dropdown {
+  position: static !important;
+}
+
+.mega-menu {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background-color: var(--white);
-  min-width: 180px;
-  box-shadow: var(--shadow);
-  border-radius: 8px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(44, 37, 30, 0.12);
+  border-radius: 0 0 16px 16px;
   border: 1px solid var(--line);
-  padding: 8px 0;
-  list-style: none;
+  border-top: none;
+  padding: 36px 40px;
   z-index: 1000;
-  transition: all 0.3s ease;
-  text-align: left;
+  transition: all 0.35s ease;
+  transform: translateY(12px);
 }
 
-.dropdown-content li { width: 100%; }
-
-.dropdown-content a {
-  padding: 10px 20px;
-  font-size: 10px;
-  border-bottom: 1px solid #f0f0f0;
-  color: var(--text-muted);
-}
-
-.dropdown-content li:last-child a { border-bottom: none; }
-
-.dropdown-content a:hover {
-  background-color: var(--bg);
-  color: var(--accent-brown);
-  padding-left: 24px;
-}
-
-.dropdown:hover .dropdown-content {
+.dropdown:hover .mega-menu {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.mega-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mega-img-box {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  background-color: var(--bg);
+}
+
+.mega-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mega-col:hover .mega-img-box img {
+  transform: scale(1.08);
+}
+
+.mega-col h4 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.mega-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mega-col ul li a {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.mega-col ul li a:hover {
+  color: var(--accent-brown);
 }
 
 /* Shared UI Components */
@@ -280,9 +334,7 @@ main {
   color: var(--text-muted);
 }
 
-.about-card ul {
-  list-style: none;
-}
+.about-card ul { list-style: none; }
 
 .about-card ul li {
   margin-bottom: 8px;
@@ -333,8 +385,22 @@ main {
   body { padding: 16px; }
   nav { flex-direction: column; gap: 12px; text-align: center; }
   .nav-links { gap: 16px; flex-direction: column; }
-  .dropdown-content { position: static; transform: none; visibility: visible; opacity: 1; display: none; box-shadow: none; border: none; background: transparent; }
-  .dropdown:hover .dropdown-content { display: block; }
+  
+  /* Mobile behavior for Mega Menu */
+  .mega-menu {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+    box-shadow: none;
+    padding: 16px 0;
+    background: transparent;
+    border: none;
+  }
+  .dropdown:hover .mega-menu { display: block; }
+  .mega-grid { grid-template-columns: 1fr; gap: 24px; }
+  .mega-img-box { height: 140px; }
+
   main { grid-template-columns: 1fr; text-align: center; }
   .script-design { font-size: 60px; right: 50%; transform: translateX(50%) rotate(-9deg); bottom: -45px; }
   .inquiry-form { grid-template-columns: 1fr; }
@@ -354,25 +420,96 @@ main {
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="#about">About Me</a></li>
       
-      <!-- Interactive Dropdown for Projects -->
-      <li class="dropdown">
+      <!-- Interactive Visual Mega Menu (Kelly Wearstler Style) -->
+      <li class="dropdown mega-dropdown">
         <a href="projects.html">Projects ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="projects.html#residential">Residential Design</a></li>
-          <li><a href="projects.html#commercial">Commercial Fit-out</a></li>
-          <li><a href="projects.html#islamic">Islamic Architecture</a></li>
-          <li><a href="projects.html#landscape">Landscape Design</a></li>
-        </ul>
+        <div class="mega-menu">
+          <div class="mega-grid">
+            
+            <div class="mega-col">
+              <div class="mega-img-box">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Residential">
+              </div>
+              <h4>Residential</h4>
+              <ul>
+                <li><a href="projects.html#villas">Luxury Villas</a></li>
+                <li><a href="projects.html#apartments">Modern Apartments</a></li>
+                <li><a href="projects.html#palaces">Private Residences</a></li>
+                <li><a href="projects.html#residential">View All Residential</a></li>
+              </ul>
+            </div>
+
+            <div class="mega-col">
+              <div class="mega-img-box">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Retail & Commercial">
+              </div>
+              <h4>Retail & Commercial</h4>
+              <ul>
+                <li><a href="projects.html#optical">Optical Retail Store</a></li>
+                <li><a href="projects.html#restaurant">La Vida Restaurant</a></li>
+                <li><a href="projects.html#offices">Corporate Headquarters</a></li>
+                <li><a href="projects.html#commercial">View All Commercial</a></li>
+              </ul>
+            </div>
+
+            <div class="mega-col">
+              <div class="mega-img-box">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=500&q=80" alt="Contemporary Islamic">
+              </div>
+              <h4>Contemporary Islamic</h4>
+              <ul>
+                <li><a href="projects.html#islamic-villas">Modern Islamic Interiors</a></li>
+                <li><a href="projects.html#monuments">Corporate Monuments</a></li>
+                <li><a href="projects.html#exhibits">Cultural Displays</a></li>
+                <li><a href="projects.html#islamic">View All Research</a></li>
+              </ul>
+            </div>
+
+            <div class="mega-col">
+              <div class="mega-img-box">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" alt="Landscape">
+              </div>
+              <h4>Landscape & Outdoor</h4>
+              <ul>
+                <li><a href="projects.html#gardens">Private Gardens</a></li>
+                <li><a href="projects.html#patios">Outdoor Living Areas</a></li>
+                <li><a href="projects.html#facades">Exterior Architectural Lighting</a></li>
+                <li><a href="projects.html#landscape">View All Landscape</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
       </li>
 
-      <!-- Interactive Dropdown for Services -->
+      <!-- Services Dropdown -->
       <li class="dropdown">
         <a href="services.html">Services ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="services.html#interior">Interior Design</a></li>
-          <li><a href="services.html#3d">3D Visualization</a></li>
-          <li><a href="services.html#bim">BIM & Shop Drawings</a></li>
-        </ul>
+        <div class="mega-menu" style="padding: 24px 40px;">
+          <div class="mega-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="mega-col">
+              <h4>Interior & Fit-out</h4>
+              <ul>
+                <li><a href="services.html#interior">Spatial Planning</a></li>
+                <li><a href="services.html#materials">Finishing Specifications</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>3D Visualization</h4>
+              <ul>
+                <li><a href="services.html#corona">Corona Renderer Visuals</a></li>
+                <li><a href="services.html#lighting">Lighting Psychology</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>BIM & Technical Scope</h4>
+              <ul>
+                <li><a href="services.html#revit">Revit BIM Modeling</a></li>
+                <li><a href="services.html#boq">BOQ & Cost Estimation</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </li>
 
       <li><a href="cv.pdf" target="_blank">CV</a></li>
