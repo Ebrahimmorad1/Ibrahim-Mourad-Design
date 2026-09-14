@@ -14,6 +14,7 @@
       --text-dark: #2c251e;
       --text-muted: #73695d;
       --accent-brown: #7a5c43;
+      --accent-brown-light: #8f6e52; /* لون أفتح لكلمة Design */
       --line: #d0c7b7;
       --white: #ffffff;
       --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
@@ -35,7 +36,6 @@
       overflow-x: hidden;
     }
 
-    /* العلامة المائية للـ CAD الهندسي */
     body::before {
       content: "";
       position: fixed;
@@ -51,7 +51,6 @@
       background-size: 240px 240px;
     }
 
-    /* الشريط العلوي */
     nav {
       display: flex;
       justify-content: space-between;
@@ -80,7 +79,6 @@
       flex-direction: column;
     }
 
-    /* تركيبة اسم إبراهيم مراد مع ديزاين المائلة أسفلها مباشرة */
     .brand-title-container {
       position: relative;
       display: inline-block;
@@ -100,7 +98,7 @@
     .script-design {
       font-family: 'Alex Brush', cursive;
       font-size: 88px;
-      color: var(--accent-brown);
+      color: var(--accent-brown-light);
       position: absolute;
       right: 0px;
       bottom: -48px;
@@ -152,7 +150,6 @@
       color: var(--text-dark);
     }
 
-    /* الصورة الدائرية بدون مربع أبيض */
     .hero-image-wrapper {
       display: flex;
       flex-direction: column;
@@ -207,7 +204,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
-    /* كارت الأزرار */
     .actions-card {
       max-width: 1250px;
       width: 100%;
@@ -306,17 +302,14 @@
 </head>
 <body>
 
-  <!-- الشريط العلوي -->
   <nav>
     <div>Rwaq Design Studio</div>
     <div>Ibrahim Mourad Design</div>
     <div>2026 / Portfolio</div>
   </nav>
 
-  <!-- القسم الرئيسي -->
   <main>
     <div class="hero-text">
-      <!-- الاسم والإنشاء بأسلوب الرسمة التوضيحية -->
       <div class="brand-title-container">
         <h1 class="main-name">IBRAHIM MOURAD</h1>
         <span class="script-design">Design</span>
@@ -342,7 +335,6 @@
     </div>
   </main>
 
-  <!-- أزرار الإجراءات -->
   <section class="actions-card">
     <div class="actions-text">
       <h3>Let's create something refined.</h3>
@@ -358,7 +350,6 @@
     </div>
   </section>
 
-  <!-- التذييل -->
   <footer>
     <div>Ibrahim Mourad · Rwaq Design Studio</div>
     <div>Interior • Exterior • Landscape • 3D Visualization</div>
