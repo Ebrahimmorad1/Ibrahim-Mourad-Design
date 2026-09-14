@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Services | Ibrahim Mourad Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    
+:root {
+  --bg: #e8e2d8;
+  --card-bg: #dfd8cb;
+  --text-dark: #2c251e;
+  --text-muted: #73695d;
+  --accent-brown: #7a5c43;
+  --accent-brown-light: #8f6e52;
+  --line: #d0c7b7;
+  --white: #ffffff;
+  --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 40px;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Watermark CAD Pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  transform: rotate(-18deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%232c251e' stroke-width='1.2'%3E%3Crect x='10' y='10' width='220' height='220'/%3E%3Crect x='30' y='30' width='180' height='180' stroke-dasharray='4 4'/%3E%3Cline x1='10' y1='120' x2='230' y2='120'/%3E%3Cline x1='120' y1='10' x2='120' y2='230'/%3E%3Ccircle cx='120' cy='120' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+/* Top Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--accent-brown);
+  border-bottom: 2px solid var(--accent-brown);
+  padding-bottom: 2px;
+}
+
+/* Shared UI Components */
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.btn {
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--text-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--text-dark);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--accent-brown);
+  border-color: var(--accent-brown);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  body { padding: 16px; }
+  nav { flex-direction: column; gap: 12px; text-align: center; }
+  .nav-links { gap: 16px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      margin: 40px 0;
+    }
+
+    .service-box {
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px;
+    }
+
+    .service-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    .service-box ul {
+      list-style-type: square;
+      padding-left: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>Rwaq Design Studio</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+    <div>Capabilities Scope</div>
+  </nav>
+
+  <div class="container">
+    <h1 style="font-size: 38px; font-weight: 900; text-transform: uppercase;">Professional Services</h1>
+    <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Full-spectrum design management, 3D visualization, BIM engineering, and site execution quality control.</p>
+
+    <div class="services-list">
+      <div class="service-box">
+        <h2>01. Architectural & Interior Design</h2>
+        <ul>
+          <li>Full Interior Layout Planning (Residential, Commercial, Retail).</li>
+          <li>Exterior Elevation & Landscape Architecture.</li>
+          <li>Contemporary Islamic & Heritage Style Integration.</li>
+          <li>Material Specs (HDF/SPC, Wood Replacement, Jotun Finishes).</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <h2>02. 3D Rendering & Visualization</h2>
+        <ul>
+          <li>Photorealistic 3ds Max + Corona Renderer Visualizations.</li>
+          <li>Architectural Lighting Design & Contrast Psychology.</li>
+          <li>Custom Furniture & Fixture CAD Details.</li>
+          <li>Interactive Digital Portfolio Presentations.</li>
+        </ul>
+      </div>
+
+      <div class="service-box">
+        <h2>03. Technical Drawings & BIM</h2>
+        <ul>
+          <li>Autodesk Revit Building Information Modeling (BIM).</li>
+          <li>Detailed Shop Drawings (Electrical, Ceiling, Plumbing).</li>
+          <li>Bill of Quantities (BOQ) & Material Estimations.</li>
+          <li>Quality Control Management & Site Supervision.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float">
+    <span>💬 WhatsApp Direct</span>
+  </a>
+
+  <footer>
+    <div>Ibrahim Mourad · Rwaq Design Studio</div>
+    <div>Cairo, Egypt · rwaqdesign@gmail.com</div>
+  </footer>
+
+</body>
+</html>

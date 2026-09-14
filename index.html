@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibrahim Mourad Design | Interior, Exterior & Landscape Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    
+:root {
+  --bg: #e8e2d8;
+  --card-bg: #dfd8cb;
+  --text-dark: #2c251e;
+  --text-muted: #73695d;
+  --accent-brown: #7a5c43;
+  --accent-brown-light: #8f6e52;
+  --line: #d0c7b7;
+  --white: #ffffff;
+  --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 40px;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Watermark CAD Pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  transform: rotate(-18deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%232c251e' stroke-width='1.2'%3E%3Crect x='10' y='10' width='220' height='220'/%3E%3Crect x='30' y='30' width='180' height='180' stroke-dasharray='4 4'/%3E%3Cline x1='10' y1='120' x2='230' y2='120'/%3E%3Cline x1='120' y1='10' x2='120' y2='230'/%3E%3Ccircle cx='120' cy='120' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+/* Top Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--accent-brown);
+  border-bottom: 2px solid var(--accent-brown);
+  padding-bottom: 2px;
+}
+
+/* Shared UI Components */
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.btn {
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--text-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--text-dark);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--accent-brown);
+  border-color: var(--accent-brown);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  body { padding: 16px; }
+  nav { flex-direction: column; gap: 12px; text-align: center; }
+  .nav-links { gap: 16px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+
+    /* Hero Layout */
+    main {
+      max-width: 1250px;
+      width: 100%;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .brand-title-container { position: relative; display: inline-block; margin-bottom: 36px; }
+    .main-name { font-size: 60px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
+    .script-design { font-family: 'Alex Brush', cursive; font-size: 88px; color: var(--accent-brown-light); position: absolute; right: 0px; bottom: -48px; transform: rotate(-9deg); pointer-events: none; }
+    .tagline { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brown); margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 18px; }
+
+    .circle-avatar { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-brown); padding: 6px; background: var(--bg); box-shadow: 0 16px 36px rgba(44, 37, 30, 0.12); }
+    
+    /* Interactive Cards Section */
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 40px auto; max-width: 1250px; width: 100%; }
+    .card { background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 16px; padding: 28px; transition: transform 0.3s; }
+    .card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.7); }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 12px; }
+    .card p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
+    /* Form Styling */
+    .inquiry-section { background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 20px; padding: 36px; max-width: 1250px; width: 100%; margin: 0 auto 40px; }
+    .inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .inquiry-form input, .inquiry-form select, .inquiry-form textarea { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); font-family: inherit; font-size: 13px; color: var(--text-dark); }
+    .inquiry-form textarea { grid-column: span 2; height: 100px; resize: vertical; }
+    .inquiry-form button { grid-column: span 2; justify-content: center; }
+
+    @media (max-width: 992px) {
+      main { grid-template-columns: 1fr; text-align: center; }
+      .script-design { font-size: 60px; right: 50%; transform: translateX(50%) rotate(-9deg); bottom: -35px; }
+      .inquiry-form { grid-template-columns: 1fr; }
+      .inquiry-form textarea, .inquiry-form button { grid-column: span 1; }
+    }
+  </style>
+
+  <!-- Google Analytics 4 Placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Microsoft Clarity Analytics Placeholder -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div>Rwaq Design Studio</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+    <div>2026 / Portfolio</div>
+  </nav>
+
+  <main>
+    <div class="hero-text">
+      <div class="brand-title-container">
+        <h1 class="main-name">IBRAHIM MOURAD</h1>
+        <span class="script-design">Design</span>
+      </div>
+      <div class="tagline">Interior • Exterior • Landscape • Finishing • 3D Visualization</div>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
+        Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn btn-primary">Explore Portfolio</a>
+        <a href="#inquiry" class="btn">Request Consultation</a>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <img src="2.jpg" alt="Ibrahim Mourad" class="circle-avatar" onerror="this.src='https://via.placeholder.com/320'">
+    </div>
+  </main>
+
+  <section class="sections-grid">
+    <div class="card">
+      <h3>Interior & Exterior Fit-out</h3>
+      <p>Luxury residential villas, corporate offices, and optical retail store transformations engineered with high accuracy.</p>
+      <a href="services.html" class="btn">Learn More</a>
+    </div>
+    <div class="card">
+      <h3>Contemporary Islamic Style</h3>
+      <p>Modern interpretations of authentic Islamic design elements tailored for luxury homes and cultural monuments.</p>
+      <a href="projects.html" class="btn">View Studies</a>
+    </div>
+    <div class="card">
+      <h3>BIM & Shop Drawings</h3>
+      <p>Comprehensive Autodesk Revit BIM modeling, mechanical/plumbing coordination, and precise execution drawings.</p>
+      <a href="services.html" class="btn">Technical Scope</a>
+    </div>
+  </section>
+
+  <!-- Interactive Project Consultation Form (Web3Forms Backend) -->
+  <section id="inquiry" class="inquiry-section">
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 24px;">Start a Design Project</h3>
+    <p style="font-size: 13px; color: var(--text-muted);">Fill out your project specifications to receive a custom design proposal and BOQ consultation.</p>
+    
+    <form action="https://api.web3forms.com/submit" method="POST" class="inquiry-form">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+      <input type="hidden" name="subject" value="New Project Inquiry from Portfolio Website">
+      <input type="hidden" name="redirect" value="https://ibrahimmourad.github.io/">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required>
+      <select name="service_type" required>
+        <option value="" disabled selected>Select Scope of Work</option>
+        <option value="Interior Design">Interior Design & Finishing</option>
+        <option value="Exterior Design">Exterior Architectural Design</option>
+        <option value="Landscape">Landscape & Outdoor</option>
+        <option value="Islamic Design">Contemporary Islamic Design</option>
+        <option value="Full Project Management">Full Contracting & Supervision</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about project location, total area (SQM), budget, and target timeline..." required></textarea>
+      
+      <button type="submit" class="btn btn-primary">Send Inquiry Proposal</button>
+    </form>
+  </section>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float">
+    <span>💬 WhatsApp Direct</span>
+  </a>
+
+  <footer>
+    <div>Ibrahim Mourad · Rwaq Design Studio</div>
+    <div>Cairo, Egypt · rwaqdesign@gmail.com</div>
+  </footer>
+
+</body>
+</html>
