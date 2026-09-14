@@ -15,12 +15,610 @@
   --text-dark: #2c251e;
   --text-muted: #73695d;
   --accent-brown: #7a5c43;
-  --accent-brown-light: #8f6e52;
-  --accent-red: #d32f2f;
-  --line: #d0c7b7;
+  --accent-brown-light: #8f6e5<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibrahim Mourad Design | Architectural & Interior Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    
+:root {
+  --bg: #f5f2eb;
+  --text-black: #111111;
+  --accent-red: #e62419;
+  --text-muted: #666666;
+  --line-color: #d1cbc1;
+  --card-bg: #eae4d8;
   --white: #ffffff;
-  --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-black);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.4;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Corner Micro-Details (Editorial Layout Style) */
+.editorial-container {
+  padding: 20px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header & Top Navigation */
+header {
+  border-bottom: 2px solid var(--text-black);
+  padding: 16px 30px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  margin-bottom: 12px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.brand-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--text-black);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-black);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent-red); }
+
+/* Mega Dropdown Menu */
+.dropdown { position: relative; }
+
+.mega-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  right: -50px;
+  width: 90vw;
+  max-width: 1100px;
+  background: var(--bg);
+  border: 2px solid var(--text-black);
+  padding: 30px;
+  z-index: 1000;
+  transition: all 0.2s ease;
+  transform: translateY(10px);
+  box-shadow: 10px 10px 0px var(--text-black);
+}
+
+.dropdown:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.mega-col h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--text-black);
+  padding-bottom: 6px;
+}
+
+.mega-col ul { list-style: none; }
+
+.mega-col ul li a {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-black);
+  display: block;
+  padding: 4px 0;
+  text-transform: none;
+}
+
+.mega-col ul li a:hover { color: var(--accent-red); }
+
+/* Hero Section (Bold Typography Style) */
+.hero-section {
+  padding: 40px 30px 20px;
+  border-bottom: 2px solid var(--text-black);
+  position: relative;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.giant-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(48px, 11vw, 150px);
+  font-weight: 900;
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  color: var(--text-black);
+  margin-bottom: 20px;
+}
+
+.giant-title span {
+  color: var(--accent-red);
+  display: block;
+}
+
+.hero-ticker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-top: 1px solid var(--text-black);
+  border-bottom: 1px solid var(--text-black);
+  padding: 10px 0;
+  margin: 20px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-image-frame {
+  position: relative;
+  border: 2px solid var(--text-black);
+  background: var(--card-bg);
+  padding: 10px;
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  filter: grayscale(20%);
+  display: block;
+}
+
+.hero-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.hero-bio p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn-editorial {
+  display: inline-block;
+  background: var(--text-black);
+  color: var(--white);
+  padding: 18px 36px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--text-black);
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.btn-editorial:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: var(--white);
+}
+
+/* Feature Strip Section */
+.strip-section {
+  border-bottom: 2px solid var(--text-black);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.strip-box {
+  padding: 30px;
+  border-right: 2px solid var(--text-black);
+}
+
+.strip-box:last-child { border-right: none; }
+
+.strip-box h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.strip-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* About & Philosophy Section */
+.about-editorial {
+  padding: 60px 30px;
+  border-bottom: 2px solid var(--text-black);
+}
+
+.editorial-header-sm {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.about-editorial h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.0;
+  margin-bottom: 30px;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill-tag {
+  border: 1px solid var(--text-black);
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--white);
+}
+
+/* Form Section (Bold Editorial Style) */
+.inquiry-editorial {
+  padding: 60px 30px;
+  background: var(--text-black);
+  color: var(--white);
+}
+
+.inquiry-editorial .editorial-header-sm { color: var(--accent-red); }
+
+.inquiry-editorial h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 6vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 40px;
+  color: var(--white);
+}
+
+.inquiry-form-bold {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.inquiry-form-bold input, 
+.inquiry-form-bold select, 
+.inquiry-form-bold textarea {
+  width: 100%;
+  padding: 18px;
+  border: 2px solid var(--line-color);
+  background: #1a1a1a;
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inquiry-form-bold input:focus, 
+.inquiry-form-bold select:focus, 
+.inquiry-form-bold textarea:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+.inquiry-form-bold textarea { grid-column: span 2; height: 120px; }
+
+.btn-submit-red {
+  grid-column: span 2;
+  background: var(--accent-red);
+  color: var(--white);
+  border: none;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit-red:hover { background: #c11b11; }
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--text-black);
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 0;
+  padding: 14px 24px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 4px 4px 0px var(--accent-red);
+}
+
+/* Footer */
+footer {
+  padding: 30px;
+  border-top: 2px solid var(--text-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .strip-section { grid-template-columns: 1fr; }
+  .strip-box { border-right: none; border-bottom: 2px solid var(--text-black); }
+  .inquiry-form-bold { grid-template-columns: 1fr; }
+  .inquiry-form-bold textarea, .btn-submit-red { grid-column: span 1; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+  .mega-menu { position: static; width: 100%; display: none; }
+  .dropdown:hover .mega-menu { display: block; }
+  .mega-grid { grid-template-columns: 1fr; }
+}
+  </style>
+
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+</head>
+<body>
+
+  <!-- Top Editorial Header & Navigation -->
+  <header>
+    <div class="top-bar">
+      <span>STUDIO // RWAQ</span>
+      <span>PERSONAL BRAND // IDENTITY KIT</span>
+    </div>
+    <nav>
+      <a href="index.html" class="brand-logo">IBRAHIM MOURAD</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        
+        <!-- Interactive Dropdown -->
+        <li class="dropdown">
+          <a href="projects.html">Projects ▾</a>
+          <div class="mega-menu">
+            <div class="mega-grid">
+              <div class="mega-col">
+                <h4>Residential</h4>
+                <ul>
+                  <li><a href="projects.html#villas">Luxury Villas</a></li>
+                  <li><a href="projects.html#apartments">Modern Apartments</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Commercial</h4>
+                <ul>
+                  <li><a href="projects.html#optical">Optical Retail Store</a></li>
+                  <li><a href="projects.html#restaurant">La Vida Restaurant</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Islamic Architecture</h4>
+                <ul>
+                  <li><a href="projects.html#islamic">Contemporary Islamic Studies</a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <h4>Landscape</h4>
+                <ul>
+                  <li><a href="projects.html#landscape">Outdoor & Lighting Design</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="cv.pdf" target="_blank">CV</a></li>
+        <li><a href="#inquiry" style="color: var(--accent-red);">Inquire ↵</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-meta">
+      <span>ARCHITECTURE</span>
+      <span>INTERIOR // LANDSCAPE</span>
+      <span>2026 EDITION</span>
+    </div>
+
+    <h1 class="giant-title">
+      ARCHITECTURAL <span>DESIGNER</span>
+    </h1>
+
+    <div class="hero-ticker">
+      <span>INTERIOR FIT-OUT</span>
+      <span>✱</span>
+      <span>3D VISUALIZATION</span>
+      <span>✱</span>
+      <span>REVIT BIM</span>
+      <span>✱</span>
+      <span>BOQ & EXECUTION</span>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-image-frame">
+        <img src="2.jpg" alt="Ibrahim Mourad" onerror="this.src='https://via.placeholder.com/600x800'">
+      </div>
+
+      <div class="hero-bio">
+        <div>
+          <div class="editorial-header-sm">PERSONAL BRAND // PHILOSOPHY</div>
+          <p>
+            Operating under <strong>Rwaq Design Studio</strong>, creating high-end architectural, interior, and landscape spaces rooted in <strong>Warm Minimalism</strong>, contrast-driven lighting design, and technical precision.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn-editorial">View Portfolio ↗</a>
+          <a href="#inquiry" class="btn-editorial" style="background: transparent; color: var(--text-black);">Start Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Strip Section -->
+  <section class="strip-section">
+    <div class="strip-box">
+      <h3>01 // FIT-OUT DESIGN</h3>
+      <p>Luxury residential villas, corporate offices, and optical retail store transformations with full material specifications.</p>
+    </div>
+    <div class="strip-box">
+      <h3>02 // CONTEMPORARY ISLAMIC</h3>
+      <p>Modern interpretations of Islamic architectural motifs tailored for high-end cultural and commercial monuments.</p>
+    </div>
+    <div class="strip-box">
+      <h3>03 // BIM & SHOP DRAWINGS</h3>
+      <p>Autodesk Revit BIM modeling, plumbing/mechanical coordination, and execution shop drawings.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-editorial">
+    <div class="editorial-header-sm">EXPERT SCOPE // SOFTWARE</div>
+    <h2>FUNCTIONAL ELEGANCE <br>Backed By Precision</h2>
+
+    <div class="skills-row">
+      <span class="skill-tag">AUTOCAD</span>
+      <span class="skill-tag">AUTODESK REVIT (BIM)</span>
+      <span class="skill-tag">3DS MAX & CORONA RENDERER</span>
+      <span class="skill-tag">ADOBE PHOTOSHOP</span>
+      <span class="skill-tag">CANVA</span>
+      <span class="skill-tag">BOQ & COST ESTIMATION</span>
+    </div>
+  </section>
+
+  <!-- Bold Red/Black Inquiry Section -->
+  <section id="inquiry" class="inquiry-editorial">
+    <div class="editorial-header-sm">GET IN TOUCH // CONSULTATION</div>
+    <h2>START A PROJECT <br>WITH RWAQ STUDIO</h2>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="inquiry-form-bold">
+      <!-- Web3Forms Key Retained -->
+      <input type="hidden" name="access_key" value="c4eaed85-7494-4b33-90e9-31aba9b99aef">
+      <input type="hidden" name="subject" value="New Project Inquiry - Portfolio Website">
+      <input type="hidden" name="redirect" value="https://ibrahimmourad.github.io/">
+
+      <input type="text" name="name" placeholder="YOUR FULL NAME *" required>
+      <input type="email" name="email" placeholder="YOUR EMAIL ADDRESS *" required>
+      <input type="tel" name="phone" placeholder="PHONE / WHATSAPP NUMBER *" required>
+      <select name="service_type" required>
+        <option value="" disabled selected>SELECT PROJECT TYPE *</option>
+        <option value="Interior Design">Interior Design & Finishing</option>
+        <option value="Exterior Design">Exterior Architectural Design</option>
+        <option value="Landscape">Landscape Design</option>
+        <option value="Islamic Design">Contemporary Islamic Architecture</option>
+        <option value="BIM & Drawings">Revit BIM & Shop Drawings</option>
+      </select>
+      <textarea name="message" placeholder="TELL US ABOUT LOCATION, AREA (SQM), AND TIMELINE..." required></textarea>
+      
+      <button type="submit" class="btn-submit-red">SUBMIT PROPOSAL REQUEST ↵</button>
+    </form>
+  </section>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float">
+    <span>💬 WhatsApp Direct</span>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div>IBRAHIM MOURAD // RWAQ DESIGN STUDIO</div>
+    <div>CAIRO, EGYPT // RWAQDESIGN@GMAIL.COM</div>
+    <div>2026 PORTFOLIO</div>
+  </footer>
+
+</body>
+</html>
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
