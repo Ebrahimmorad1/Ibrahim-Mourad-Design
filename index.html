@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noai, noimageai">
-  <title>Projects Gallery | Ibrahim Mourad Design</title>
+  <title>Ibrahim Mourad Design | Rwaq Design Studio</title>
   
   <style>
     :root {
@@ -19,56 +19,49 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
     body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
-    .brand-logo { font-weight: 700; font-size: 14px; letter-spacing: 1.5px; }
-    nav a { text-decoration: none; color: var(--text-main); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-left: 20px; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .brand-logo { font-weight: 700; letter-spacing: 1.5px; font-size: 14px; }
+    nav { display: flex; gap: 20px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text-main); font-size: 12px; font-weight: 600; text-transform: uppercase; }
 
-    .page-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
-    .page-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
+    .hero-section { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: center; padding: 60px 0; }
+    .hero-title { font-size: 42px; font-weight: 800; line-height: 1.1; text-transform: uppercase; }
+    .hero-title span { font-style: italic; font-weight: 400; color: #555; display: block; }
+    .hero-subtitle { font-size: 11px; letter-spacing: 2px; color: var(--text-muted); margin: 15px 0 20px; text-transform: uppercase; }
+    .hero-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 25px; }
 
-    /* أقسام المشاريع */
-    .project-section {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 32px;
-      border: 1px solid var(--line);
-      margin-bottom: 50px;
-    }
+    .profile-img-frame { width: 260px; height: 260px; border-radius: 50%; border: 2px solid var(--line); padding: 10px; }
+    .profile-img-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 15px;
-    }
+    .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin: 40px 0 25px; }
+    .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    
+    .work-card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+    .work-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--line); height: 100%; transition: transform 0.3s; }
+    .work-card:hover { transform: translateY(-5px); }
 
-    .project-header h2 { font-size: 22px; font-weight: 700; }
-    .category-tag { background: var(--bg); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-
-    .project-details { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
-
-    /* معرض صور المشروع المترتبة رأسياً */
-    .project-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
+    .work-img-wrapper { position: relative; width: 100%; height: 220px; overflow: hidden; background: #eae5de; }
+    
+    /* حماية الصور عبر CSS */
     img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid var(--line);
+      height: 100%;
+      object-fit: cover;
       -webkit-user-drag: none;
       user-select: none;
       pointer-events: none;
     }
 
+    .category-badge { position: absolute; top: 12px; left: 12px; background: var(--badge-bg); color: #fff; font-size: 10px; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
+    .work-info { padding: 20px; }
+    .work-info h3 { font-size: 16px; margin-bottom: 8px; }
+    .work-info p { font-size: 12px; color: var(--text-muted); }
+
     @media print { html, body { display: none !important; } }
+    @media (max-width: 992px) { .works-grid { grid-template-columns: repeat(2, 1fr); } .hero-section { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .works-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -77,72 +70,72 @@
     <header>
       <div class="brand-logo">RWAQ DESIGN STUDIO</div>
       <nav>
-        <a href="index.html">← Back to Home</a>
-        <a href="services.html">Services</a>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
       </nav>
     </header>
 
-    <h1 class="page-title">Portfolio Projects</h1>
-    <p class="page-desc">Comprehensive architectural and interior design case studies.</p>
-
-    <!-- مشروع 1: السكني -->
-    <section id="residential" class="project-section">
-      <div class="project-header">
-        <div>
-          <h2>Luxury Villa Interior Design</h2>
-          <p style="font-size: 12px; color: var(--text-muted);">Cairo, Egypt · Residential Space</p>
-        </div>
-        <span class="category-tag">Residential</span>
+    <section class="hero-section">
+      <div>
+        <h1 class="hero-title">IBRAHIM MOURAD<br><span>Design</span></h1>
+        <p class="hero-subtitle">INTERIOR · EXTERIOR · LANDSCAPE · FINISHING · 3D VISUALIZATION</p>
+        <p class="hero-desc">Specialized in high-end residential, commercial fit-outs, and contemporary architecture design research.</p>
       </div>
-      <p class="project-details">
-        Warm Minimalist reception & living spaces featuring custom architectural lighting, concealed coves, and premium finish materials (Wood & SPC paneling).
-      </p>
-      
-      <div class="project-gallery">
-        <img src="images/villa-1.jpg" alt="Villa Interior 1">
-        <img src="images/villa-2.jpg" alt="Villa Interior 2">
-        <img src="images/villa-3.jpg" alt="Villa Interior 3">
+      <div class="profile-img-frame">
+        <img src="images/profile.jpg" alt="Ibrahim Mourad">
       </div>
     </section>
 
-    <!-- مشروع 2: التجاري -->
-    <section id="commercial" class="project-section">
-      <div class="project-header">
-        <div>
-          <h2>Optical Retail Store Fit-Out</h2>
-          <p style="font-size: 12px; color: var(--text-muted);">27.5 SQM Retail Concept</p>
-        </div>
-        <span class="category-tag">Commercial Fit-Out</span>
+    <section>
+      <div class="featured-header">
+        <h2>Featured Design Portfolio</h2>
+        <a href="projects.html" style="text-decoration:none; color:inherit; font-size:12px; font-weight:700;">VIEW ALL ↗</a>
       </div>
-      <p class="project-details">
-        Full commercial fit-out including custom eyewear display units, directional spotlighting, and execution shop drawings.
-      </p>
-      
-      <div class="project-gallery">
-        <img src="images/optical-1.jpg" alt="Optical Store 1">
-        <img src="images/optical-2.jpg" alt="Optical Store 2">
+
+      <div class="works-grid">
+        <!-- غلاف المشروع 1 -->
+        <a href="projects.html#residential" class="work-card-link">
+          <div class="work-card">
+            <div class="work-img-wrapper">
+              <img src="images/villa-cover.jpg" alt="Luxury Villa">
+              <span class="category-badge">Residential</span>
+            </div>
+            <div class="work-info">
+              <h3>Luxury Villa Interior Design</h3>
+              <p>Warm Minimalist reception & living spaces.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- غلاف المشروع 2 -->
+        <a href="projects.html#commercial" class="work-card-link">
+          <div class="work-card">
+            <div class="work-img-wrapper">
+              <img src="images/optical-cover.jpg" alt="Commercial Fit-Out">
+              <span class="category-badge">Commercial</span>
+            </div>
+            <div class="work-info">
+              <h3>Optical Retail Store Fit-Out</h3>
+              <p>Commercial store transformation & shop drawings.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- غلاف المشروع 3 -->
+        <a href="projects.html#islamic" class="work-card-link">
+          <div class="work-card">
+            <div class="work-img-wrapper">
+              <img src="images/islamic-cover.jpg" alt="Islamic Motifs">
+              <span class="category-badge">Islamic Arch</span>
+            </div>
+            <div class="work-info">
+              <h3>Contemporary Islamic Motifs</h3>
+              <p>Modern reinterpretation of geometric vaults.</p>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
-
-    <!-- مشروع 3: المعماري الإسلامي -->
-    <section id="islamic" class="project-section">
-      <div class="project-header">
-        <div>
-          <h2>Contemporary Islamic Architecture</h2>
-          <p style="font-size: 12px; color: var(--text-muted);">Architectural Research & Visualization</p>
-        </div>
-        <span class="category-tag">Islamic Arch</span>
-      </div>
-      <p class="project-details">
-        Modern reinterpretation of traditional geometric motifs, cross-vaulted Mediterranean roofs, and natural light play.
-      </p>
-      
-      <div class="project-gallery">
-        <img src="images/islamic-1.jpg" alt="Islamic Architecture 1">
-        <img src="images/islamic-2.jpg" alt="Islamic Architecture 2">
-      </div>
-    </section>
-
   </div>
 
   <script>
