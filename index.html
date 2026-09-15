@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noai, noimageai">
-  <title>Services | Ibrahim Mourad Design</title>
+  <title>Projects Gallery | Ibrahim Mourad Design</title>
   
   <style>
     :root {
@@ -14,6 +14,7 @@
       --text-muted: #666666;
       --accent: #2c2a29;
       --line: #e2ded7;
+      --badge-bg: rgba(0, 0, 0, 0.7);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
@@ -27,43 +28,47 @@
     .page-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
     .page-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
 
-    /* شبكة الخدمات */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 60px;
-    }
-
-    .service-card {
+    /* أقسام المشاريع */
+    .project-section {
       background: var(--card-bg);
       border-radius: 16px;
-      padding: 30px;
+      padding: 32px;
       border: 1px solid var(--line);
+      margin-bottom: 50px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 15px;
+    }
+
+    .project-header h2 { font-size: 22px; font-weight: 700; }
+    .category-tag { background: var(--bg); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+
+    .project-details { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+
+    /* معرض صور المشروع المترتبة رأسياً */
+    .project-gallery {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 20px;
     }
 
-    .service-icon { font-size: 28px; margin-bottom: 16px; }
-    .service-card h3 { font-size: 18px; margin-bottom: 12px; }
-    .service-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-    .service-list { list-style: none; font-size: 12px; color: var(--text-main); font-weight: 600; }
-    .service-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-
-    .cta-box {
-      background: var(--accent);
-      color: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
     }
 
-    .cta-box h2 { font-size: 24px; margin-bottom: 10px; }
-    .cta-box p { font-size: 13px; color: #ccc; margin-bottom: 20px; }
-    .cta-btn { background: #ffffff; color: var(--accent); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-
-    @media (max-width: 992px) { .services-grid { grid-template-columns: 1fr; } }
+    @media print { html, body { display: none !important; } }
   </style>
 </head>
 <body>
@@ -73,65 +78,70 @@
       <div class="brand-logo">RWAQ DESIGN STUDIO</div>
       <nav>
         <a href="index.html">← Back to Home</a>
-        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
       </nav>
     </header>
 
-    <h1 class="page-title">Design Services</h1>
-    <p class="page-desc">Comprehensive architectural, interior, and technical execution solutions.</p>
+    <h1 class="page-title">Portfolio Projects</h1>
+    <p class="page-desc">Comprehensive architectural and interior design case studies.</p>
 
-    <div class="services-grid">
-
-      <!-- خدمة 1 -->
-      <div id="interior" class="service-card">
+    <!-- مشروع 1: السكني -->
+    <section id="residential" class="project-section">
+      <div class="project-header">
         <div>
-          <div class="service-icon">🏛️</div>
-          <h3>Interior & Finishing Design</h3>
-          <p>Full interior layout development, mood boards, material selection (marble/wood alternatives, SPC, Jotun paints), and lighting design psychology.</p>
+          <h2>Luxury Villa Interior Design</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">Cairo, Egypt · Residential Space</p>
         </div>
-        <ul class="service-list">
-          <li>✓ Residential Living & Bedrooms</li>
-          <li>✓ Commercial Stores & Fit-Outs</li>
-          <li>✓ Custom Furniture & Millwork</li>
-        </ul>
+        <span class="category-tag">Residential</span>
       </div>
+      <p class="project-details">
+        Warm Minimalist reception & living spaces featuring custom architectural lighting, concealed coves, and premium finish materials (Wood & SPC paneling).
+      </p>
+      
+      <div class="project-gallery">
+        <img src="images/villa-1.jpg" alt="Villa Interior 1">
+        <img src="images/villa-2.jpg" alt="Villa Interior 2">
+        <img src="images/villa-3.jpg" alt="Villa Interior 3">
+      </div>
+    </section>
 
-      <!-- خدمة 2 -->
-      <div id="3d" class="service-card">
+    <!-- مشروع 2: التجاري -->
+    <section id="commercial" class="project-section">
+      <div class="project-header">
         <div>
-          <div class="service-icon">🖼️</div>
-          <h3>3D Visualization & Renders</h3>
-          <p>High-end architectural renders using 3ds Max & Corona Renderer, bringing exact lighting contrast and natural textures to life before construction.</p>
+          <h2>Optical Retail Store Fit-Out</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">27.5 SQM Retail Concept</p>
         </div>
-        <ul class="service-list">
-          <li>✓ Photorealistic Interior Renders</li>
-          <li>✓ Exterior Architectural Elevation</li>
-          <li>✓ Landscape & Outdoor Spaces</li>
-        </ul>
+        <span class="category-tag">Commercial Fit-Out</span>
       </div>
+      <p class="project-details">
+        Full commercial fit-out including custom eyewear display units, directional spotlighting, and execution shop drawings.
+      </p>
+      
+      <div class="project-gallery">
+        <img src="images/optical-1.jpg" alt="Optical Store 1">
+        <img src="images/optical-2.jpg" alt="Optical Store 2">
+      </div>
+    </section>
 
-      <!-- خدمة 3 -->
-      <div id="bim" class="service-card">
+    <!-- مشروع 3: المعماري الإسلامي -->
+    <section id="islamic" class="project-section">
+      <div class="project-header">
         <div>
-          <div class="service-icon">📐</div>
-          <h3>BIM & Technical Shop Drawings</h3>
-          <p>Detailed architectural working drawings using Revit & AutoCAD, material BOQs, and exact spatial plans ready for site contractors.</p>
+          <h2>Contemporary Islamic Architecture</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">Architectural Research & Visualization</p>
         </div>
-        <ul class="service-list">
-          <li>✓ Ceiling & Lighting Layouts</li>
-          <li>✓ Plumbing & Tile Alignment Plans</li>
-          <li>✓ Full Bill of Quantities (BOQ)</li>
-        </ul>
+        <span class="category-tag">Islamic Arch</span>
       </div>
-
-    </div>
-
-    <!-- صندوق طلب الاستشارة -->
-    <div class="cta-box">
-      <h2>Have a Project in Mind?</h2>
-      <p>Let's discuss your project scope, area, and estimated budget to prepare a custom design proposal.</p>
-      <a href="index.html#inquiry" class="cta-btn">Request Project Proposal ↗</a>
-    </div>
+      <p class="project-details">
+        Modern reinterpretation of traditional geometric motifs, cross-vaulted Mediterranean roofs, and natural light play.
+      </p>
+      
+      <div class="project-gallery">
+        <img src="images/islamic-1.jpg" alt="Islamic Architecture 1">
+        <img src="images/islamic-2.jpg" alt="Islamic Architecture 2">
+      </div>
+    </section>
 
   </div>
 
