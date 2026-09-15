@@ -1,265 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design Services | Ibrahim Mourad Design</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <meta name="robots" content="noai, noimageai">
+  <title>Services | Ibrahim Mourad Design</title>
+  
   <style>
-    
-:root {
-  --bg: #e8e2d8;
-  --card-bg: #dfd8cb;
-  --text-dark: #2c251e;
-  --text-muted: #73695d;
-  --accent-brown: #7a5c43;
-  --accent-brown-light: #8f6e52;
-  --line: #d0c7b7;
-  --white: #ffffff;
-  --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
-}
+    :root {
+      --bg: #f4f0ea;
+      --card-bg: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #666666;
+      --accent: #2c2a29;
+      --line: #e2ded7;
+    }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-body {
-  min-height: 100vh;
-  background-color: var(--bg);
-  font-family: 'Montserrat', sans-serif;
-  color: var(--text-dark);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 24px 40px;
-  line-height: 1.6;
-  position: relative;
-  overflow-x: hidden;
-}
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+    .brand-logo { font-weight: 700; font-size: 14px; letter-spacing: 1.5px; }
+    nav a { text-decoration: none; color: var(--text-main); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-left: 20px; }
 
-/* Watermark CAD Pattern */
-body::before {
-  content: "";
-  position: fixed;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.04;
-  transform: rotate(-18deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%232c251e' stroke-width='1.2'%3E%3Crect x='10' y='10' width='220' height='220'/%3E%3Crect x='30' y='30' width='180' height='180' stroke-dasharray='4 4'/%3E%3Cline x1='10' y1='120' x2='230' y2='120'/%3E%3Cline x1='120' y1='10' x2='120' y2='230'/%3E%3Ccircle cx='120' cy='120' r='50'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 240px 240px;
-}
+    .page-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+    .page-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
 
-/* Top Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-  color: var(--accent-brown);
-  border-bottom: 2px solid var(--accent-brown);
-  padding-bottom: 2px;
-}
-
-/* Shared UI Components */
-.container {
-  max-width: 1250px;
-  width: 100%;
-  margin: 40px auto;
-}
-
-.btn {
-  padding: 13px 22px;
-  border-radius: 8px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--text-dark);
-  color: var(--text-dark);
-  background: transparent;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: var(--text-dark);
-  color: var(--white);
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--text-dark);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background: var(--accent-brown);
-  border-color: var(--accent-brown);
-}
-
-/* Floating WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  padding: 12px 20px;
-  font-size: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 1000;
-  transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.05);
-}
-
-footer {
-  border-top: 1px solid var(--line);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-@media (max-width: 992px) {
-  body { padding: 16px; }
-  nav { flex-direction: column; gap: 12px; text-align: center; }
-  .nav-links { gap: 16px; }
-  footer { flex-direction: column; gap: 12px; text-align: center; }
-}
-
-
-    .services-list {
+    /* شبكة الخدمات */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 32px;
-      margin: 40px 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
     }
 
-    .service-box {
-      background: rgba(255, 255, 255, 0.55);
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 30px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .service-box h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--text-dark);
-      margin-bottom: 14px;
+    .service-icon { font-size: 28px; margin-bottom: 16px; }
+    .service-card h3 { font-size: 18px; margin-bottom: 12px; }
+    .service-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+    .service-list { list-style: none; font-size: 12px; color: var(--text-main); font-weight: 600; }
+    .service-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+
+    .cta-box {
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
     }
 
-    .service-box ul {
-      list-style-type: square;
-      padding-left: 20px;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
+    .cta-box h2 { font-size: 24px; margin-bottom: 10px; }
+    .cta-box p { font-size: 13px; color: #ccc; margin-bottom: 20px; }
+    .cta-btn { background: #ffffff; color: var(--accent); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+
+    @media (max-width: 992px) { .services-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div>Rwaq Design Studio</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="cv.pdf" target="_blank">CV</a></li>
-    </ul>
-    <div>Capabilities Scope</div>
-  </nav>
-
   <div class="container">
-    <h1 style="font-size: 38px; font-weight: 900; text-transform: uppercase;">Professional Services</h1>
-    <p style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Full-spectrum design management, 3D visualization, BIM engineering, and site execution quality control.</p>
+    <header>
+      <div class="brand-logo">RWAQ DESIGN STUDIO</div>
+      <nav>
+        <a href="index.html">← Back to Home</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+    </header>
 
-    <div class="services-list">
-      <div class="service-box">
-        <h2>01. Architectural & Interior Design</h2>
-        <ul>
-          <li>Full Interior Layout Planning (Residential, Commercial, Retail).</li>
-          <li>Exterior Elevation & Landscape Architecture.</li>
-          <li>Contemporary Islamic & Heritage Style Integration.</li>
-          <li>Material Specs (HDF/SPC, Wood Replacement, Jotun Finishes).</li>
+    <h1 class="page-title">Design Services</h1>
+    <p class="page-desc">Comprehensive architectural, interior, and technical execution solutions.</p>
+
+    <div class="services-grid">
+
+      <!-- خدمة 1 -->
+      <div id="interior" class="service-card">
+        <div>
+          <div class="service-icon">🏛️</div>
+          <h3>Interior & Finishing Design</h3>
+          <p>Full interior layout development, mood boards, material selection (marble/wood alternatives, SPC, Jotun paints), and lighting design psychology.</p>
+        </div>
+        <ul class="service-list">
+          <li>✓ Residential Living & Bedrooms</li>
+          <li>✓ Commercial Stores & Fit-Outs</li>
+          <li>✓ Custom Furniture & Millwork</li>
         </ul>
       </div>
 
-      <div class="service-box">
-        <h2>02. 3D Rendering & Visualization</h2>
-        <ul>
-          <li>Photorealistic 3ds Max + Corona Renderer Visualizations.</li>
-          <li>Architectural Lighting Design & Contrast Psychology.</li>
-          <li>Custom Furniture & Fixture CAD Details.</li>
-          <li>Interactive Digital Portfolio Presentations.</li>
+      <!-- خدمة 2 -->
+      <div id="3d" class="service-card">
+        <div>
+          <div class="service-icon">🖼️</div>
+          <h3>3D Visualization & Renders</h3>
+          <p>High-end architectural renders using 3ds Max & Corona Renderer, bringing exact lighting contrast and natural textures to life before construction.</p>
+        </div>
+        <ul class="service-list">
+          <li>✓ Photorealistic Interior Renders</li>
+          <li>✓ Exterior Architectural Elevation</li>
+          <li>✓ Landscape & Outdoor Spaces</li>
         </ul>
       </div>
 
-      <div class="service-box">
-        <h2>03. Technical Drawings & BIM</h2>
-        <ul>
-          <li>Autodesk Revit Building Information Modeling (BIM).</li>
-          <li>Detailed Shop Drawings (Electrical, Ceiling, Plumbing).</li>
-          <li>Bill of Quantities (BOQ) & Material Estimations.</li>
-          <li>Quality Control Management & Site Supervision.</li>
+      <!-- خدمة 3 -->
+      <div id="bim" class="service-card">
+        <div>
+          <div class="service-icon">📐</div>
+          <h3>BIM & Technical Shop Drawings</h3>
+          <p>Detailed architectural working drawings using Revit & AutoCAD, material BOQs, and exact spatial plans ready for site contractors.</p>
+        </div>
+        <ul class="service-list">
+          <li>✓ Ceiling & Lighting Layouts</li>
+          <li>✓ Plumbing & Tile Alignment Plans</li>
+          <li>✓ Full Bill of Quantities (BOQ)</li>
         </ul>
       </div>
+
     </div>
+
+    <!-- صندوق طلب الاستشارة -->
+    <div class="cta-box">
+      <h2>Have a Project in Mind?</h2>
+      <p>Let's discuss your project scope, area, and estimated budget to prepare a custom design proposal.</p>
+      <a href="index.html#inquiry" class="cta-btn">Request Project Proposal ↗</a>
+    </div>
+
   </div>
 
-  <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float">
-    <span>💬 WhatsApp Direct</span>
-  </a>
-
-  <footer>
-    <div>Ibrahim Mourad · Rwaq Design Studio</div>
-    <div>Cairo, Egypt · rwaqdesign@gmail.com</div>
-  </footer>
-
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) || (e.ctrlKey && ['u','s'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+      }
+    });
+    window.addEventListener('keyup', e => { if (e.key === 'PrintScreen') navigator.clipboard.writeText(''); });
+  </script>
 </body>
 </html>
