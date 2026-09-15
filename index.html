@@ -7,12 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  
-  <!-- Crisp Live Chat Integration (أداة التحدث المباشر لايف) -->
-  <script type="text/javascript">
-    window.$crisp=[];window.CRISP_WEBSITE_ID="CRISP_WEBSITE_ID_HERE";
-    (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-  </script>
 
   <style>
     :root {
@@ -43,7 +37,6 @@
       overflow-x: hidden;
     }
 
-    /* Watermark CAD Pattern */
     body::before {
       content: "";
       position: fixed;
@@ -59,12 +52,12 @@
       background-size: 240px 240px;
     }
 
-    /* Top Navigation - Enlarged & Enhanced */
+    /* Top Navigation */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 13px; /* تكبير الخط العلوي */
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -84,14 +77,12 @@
 
     .nav-links {
       display: flex;
-      gap: 32px; /* زيادة المسافات */
+      gap: 32px;
       list-style: none;
       align-items: center;
     }
 
-    .nav-links > li {
-      position: relative;
-    }
+    .nav-links > li { position: relative; }
 
     .nav-links a {
       color: var(--text-dark);
@@ -102,11 +93,8 @@
       display: block;
     }
 
-    .nav-links a:hover, .nav-links > li > a.active {
-      color: var(--accent-brown);
-    }
+    .nav-links a:hover, .nav-links > li > a.active { color: var(--accent-brown); }
 
-    /* Top Portfolio Button Style */
     .btn-nav-portfolio {
       background: var(--text-dark);
       color: var(--white) !important;
@@ -120,7 +108,7 @@
       transform: translateY(-2px);
     }
 
-    /* Dropdown Menu Styling */
+    /* Dropdown Menu */
     .dropdown-content {
       visibility: hidden;
       opacity: 0;
@@ -153,7 +141,7 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Hero Layout */
+    /* Hero Section */
     main {
       max-width: 1250px;
       width: 100%;
@@ -170,7 +158,6 @@
     .tagline { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brown); margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 18px; }
     .circle-avatar { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-brown); padding: 6px; background: var(--bg); box-shadow: 0 16px 36px rgba(44, 37, 30, 0.12); }
 
-    /* Buttons */
     .btn {
       padding: 14px 26px;
       border-radius: 8px;
@@ -192,103 +179,29 @@
     .btn-primary { background: var(--text-dark); color: var(--white); }
     .btn-primary:hover { background: var(--accent-brown); border-color: var(--accent-brown); }
 
-    /* Visual Works Gallery Section (بديل الكروت النصية) */
-    .gallery-section {
-      max-width: 1250px;
-      width: 100%;
-      margin: 50px auto;
-    }
+    /* Gallery Section */
+    .gallery-section { max-width: 1250px; width: 100%; margin: 50px auto; }
+    .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text-dark); }
+    .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .work-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .work-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(44, 37, 30, 0.14); }
+    .work-img-wrapper { position: relative; height: 240px; overflow: hidden; }
+    .work-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .work-card:hover .work-img-wrapper img { transform: scale(1.06); }
+    .category-badge { position: absolute; top: 16px; left: 16px; background: rgba(44, 37, 30, 0.85); color: var(--white); padding: 6px 14px; border-radius: 50px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(4px); }
+    .work-info { padding: 20px; }
+    .work-info h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 6px; }
+    .work-info p { font-size: 12px; color: var(--text-muted); }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 12px;
-    }
-
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: var(--text-dark);
-    }
-
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .work-card {
-      background: var(--white);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(44, 37, 30, 0.14);
-    }
-
-    .work-img-wrapper {
-      position: relative;
-      height: 240px;
-      overflow: hidden;
-    }
-
-    .work-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .work-card:hover .work-img-wrapper img {
-      transform: scale(1.06);
-    }
-
-    .category-badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(44, 37, 30, 0.85);
-      color: var(--white);
-      padding: 6px 14px;
-      border-radius: 50px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      backdrop-filter: blur(4px);
-    }
-
-    .work-info {
-      padding: 20px;
-    }
-
-    .work-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .work-info p {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    /* Form Styling */
+    /* Inquiry Section */
     .inquiry-section { background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 20px; padding: 36px; max-width: 1250px; width: 100%; margin: 0 auto 40px; }
     .inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .inquiry-form input, .inquiry-form select, .inquiry-form textarea { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); font-family: inherit; font-size: 13px; color: var(--text-dark); }
     .inquiry-form textarea { grid-column: span 2; height: 100px; resize: vertical; }
     .inquiry-form button { grid-column: span 2; justify-content: center; }
 
-    /* Floating Chat Buttons */
+    /* WhatsApp Button */
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
@@ -307,18 +220,14 @@
       z-index: 1000;
       transition: transform 0.3s;
     }
-
     .whatsapp-float:hover { transform: scale(1.05); }
 
-    /* Counter Badge */
+    /* Visitor Counter Badge */
     .visitor-badge {
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      padding: 4px 10px;
-      border-radius: 20px;
+      border-radius: 6px;
+      overflow: hidden;
     }
 
     footer {
@@ -350,7 +259,7 @@
 </head>
 <body>
 
-  <!-- Header Navigation -->
+  <!-- Top Navigation -->
   <nav>
     <div class="brand-logo-text">RWAQ DESIGN STUDIO</div>
     
@@ -376,14 +285,13 @@
         </ul>
       </li>
 
-      <!-- Portfolio Button -->
       <li><a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn-nav-portfolio">Portfolio ↗</a></li>
       <li><a href="cv.pdf" target="_blank">CV</a></li>
     </ul>
 
-    <!-- Dynamic Visitor Counter Badge (عداد الزوار المباشر) -->
+    <!-- Visitor Counter -->
     <div class="visitor-badge" title="Total Website Visits">
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fibrahimmourad.github.io&count_bg=%237A5C43&title_bg=%232C251E&icon=&icon_color=%23E7E7E7&title=VISITS&edge_flat=false" alt="Visitor Counter"/>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fibrahimmourad.github.io%2FIbrahim-Mourad-Design&count_bg=%237A5C43&title_bg=%232C251E&icon=&icon_color=%23E7E7E7&title=VISITS&edge_flat=true" alt="Visitor Counter"/>
     </div>
   </nav>
 
@@ -409,7 +317,7 @@
     </div>
   </main>
 
-  <!-- Featured Works Showcase (بديل الكروت النصية) -->
+  <!-- Featured Works Showcase -->
   <section id="featured-works" class="gallery-section">
     <div class="section-header">
       <div>
@@ -420,7 +328,7 @@
     </div>
 
     <div class="works-grid">
-      <!-- Work Card 1 -->
+      <!-- Project Item 1 -->
       <div class="work-card">
         <div class="work-img-wrapper">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Luxury Villa Interior">
@@ -432,7 +340,7 @@
         </div>
       </div>
 
-      <!-- Work Card 2 -->
+      <!-- Project Item 2 -->
       <div class="work-card">
         <div class="work-img-wrapper">
           <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Optical Retail Store Fit-out">
@@ -444,7 +352,7 @@
         </div>
       </div>
 
-      <!-- Work Card 3 -->
+      <!-- Project Item 3 -->
       <div class="work-card">
         <div class="work-img-wrapper">
           <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Contemporary Islamic Architecture">
@@ -458,7 +366,7 @@
     </div>
   </section>
 
-  <!-- Interactive Project Consultation Form -->
+  <!-- Project Consultation Form -->
   <section id="inquiry" class="inquiry-section">
     <h3 style="font-family: 'Playfair Display', serif; font-size: 24px;">Start a Design Project</h3>
     <p style="font-size: 13px; color: var(--text-muted);">Fill out your project specifications to receive a custom design proposal and BOQ consultation.</p>
@@ -485,7 +393,7 @@
     </form>
   </section>
 
-  <!-- Floating WhatsApp Direct Chat -->
+  <!-- Floating WhatsApp CTA -->
   <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float">
     <span>💬 Chat On WhatsApp</span>
   </a>
