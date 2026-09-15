@@ -4,126 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noai, noimageai">
-  <title>Ibrahim Mourad Design | Rwaq Design Studio</title>
+  <title>Projects Gallery | Ibrahim Mourad Design</title>
   
-  <!-- استدعاء خطوط التنسيق الأصلي (Plus Jakarta Sans + Cormorant Garamond) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --bg: #ece5da;            /* لون الخلفية البيج الدافئ الاصلي */
-      --card-bg: #ffffff;       /* لون كروت الأبيض */
-      --text-main: #1d1b1a;     /* لون النصوص الداكنة */
-      --text-muted: #666059;   /* لون النصوص الفرعية */
-      --accent: #231f20;       /* لون الأزرار الرئيسية */
-      --input-bg: #e2dbd0;     /* لون تعبئة مدخلات النموذج */
-      --line: #dfd8cc;         /* لون الفواصل */
-      --btn-light: #eee7dc;    /* لون أزرار الكروت الفرعية */
+      --bg: #f4f0ea;
+      --card-bg: #ffffff;
+      --text-main: #1a1a1a;
+      --text-muted: #666666;
+      --accent: #2c2a29;
+      --line: #e2ded7;
+      --badge-bg: rgba(0, 0, 0, 0.7);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
     body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-    /* الخط المائل الفاخر للعنوان والعناوين الفرعية */
-    .script-font {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 400;
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+    .brand-logo { font-weight: 700; font-size: 14px; letter-spacing: 1.5px; }
+    nav a { text-decoration: none; color: var(--text-main); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-left: 20px; }
+
+    .page-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+    .page-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
+
+    /* أقسام المشاريع */
+    .project-section {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      margin-bottom: 50px;
     }
 
-    /* الهيدر وقائمة التنقل */
-    header { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line); }
-    .brand-logo { font-weight: 800; letter-spacing: 1.5px; font-size: 13px; text-transform: uppercase; }
-    nav { display: flex; gap: 24px; align-items: center; }
-    nav a { text-decoration: none; color: var(--text-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-    .portfolio-tag { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; }
-
-    /* قسم الهيرو التعريفي */
-    .hero-section { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: center; padding: 60px 0 50px; }
-    .hero-title { font-size: 46px; font-weight: 800; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.5px; }
-    .hero-title .script-font { display: block; font-size: 52px; font-weight: 400; text-transform: capitalize; margin-top: -10px; color: #3a3533; }
-    .hero-subtitle { font-size: 10px; letter-spacing: 2px; color: var(--text-muted); margin: 18px 0; text-transform: uppercase; font-weight: 700; }
-    .hero-desc { font-size: 13px; color: var(--text-muted); max-width: 520px; margin-bottom: 28px; line-height: 1.6; }
-    
-    .hero-buttons { display: flex; gap: 14px; }
-    .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border: none; cursor: pointer; border-radius: 4px; text-decoration: none; display: inline-block; }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
-
-    /* إطار الصورة الشخصية الدائري */
-    .profile-img-frame { width: 250px; height: 250px; border-radius: 50%; border: 1px solid #d4cdbf; padding: 6px; margin: 0 auto; background: rgba(255,255,255,0.2); }
-    .profile-img-frame img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
-
-    /* شبكة الكروت الثلاثة بالوسط */
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 45px; }
-    .feature-card { background: var(--card-bg); border-radius: 14px; padding: 28px; border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
-    .feature-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
-    .feature-card p { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
-    
-    .card-btn { background: var(--btn-light); color: var(--text-main); text-decoration: none; padding: 10px 18px; border-radius: 4px; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; display: inline-block; align-self: flex-start; }
-
-    /* كارت نموذج بدء المشروع السريع */
-    .project-form-card { background: var(--card-bg); border-radius: 16px; padding: 36px; border: 1px solid var(--line); margin-bottom: 30px; }
-    .project-form-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
-    .form-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
-
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-    input, select, textarea {
-      width: 100%;
-      background: var(--input-bg);
-      border: none;
-      border-radius: 6px;
-      padding: 12px 16px;
-      font-size: 12px;
-      color: var(--text-main);
-      outline: none;
-    }
-    input::placeholder, textarea::placeholder { color: #888075; }
-    textarea { height: 90px; resize: none; margin-bottom: 18px; }
-
-    .btn-submit {
-      width: 100%;
-      background: var(--accent);
-      color: #ffffff;
-      padding: 14px;
-      border: none;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    /* زر الواتساب العائم أسفل اليمين */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #25D366;
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: 700;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .project-header {
       display: flex;
-      align-items: center;
-      gap: 6px;
-      z-index: 1000;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 15px;
     }
 
-    /* حماية ضد الطباعة والشاشات الصغيرة */
-    @media print { html, body { display: none !important; } }
-    @media (max-width: 992px) {
-      .features-grid, .form-grid { grid-template-columns: 1fr; }
-      .hero-section { grid-template-columns: 1fr; text-align: center; }
-      .hero-buttons { justify-content: center; }
+    .project-header h2 { font-size: 22px; font-weight: 700; }
+    .category-tag { background: var(--bg); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+
+    .project-details { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+
+    /* معرض صور المشروع المترتبة رأسياً */
+    .project-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @media print { html, body { display: none !important; } }
   </style>
 </head>
 <body>
@@ -132,87 +77,74 @@
     <header>
       <div class="brand-logo">RWAQ DESIGN STUDIO</div>
       <nav>
-        <a href="index.html">HOME</a>
-        <a href="projects.html">PROJECTS ▾</a>
-        <a href="services.html">SERVICES ▾</a>
-        <a href="cv.pdf" target="_blank">CV</a>
-        <span class="portfolio-tag">2026 / PORTFOLIO</span>
+        <a href="index.html">← Back to Home</a>
+        <a href="services.html">Services</a>
       </nav>
     </header>
 
-    <!-- قسم الهيرو الرئيسي -->
-    <section class="hero-section">
-      <div>
-        <h1 class="hero-title">
-          IBRAHIM MOURAD
-          <span class="script-font">Design</span>
-        </h1>
-        <p class="hero-subtitle">INTERIOR · EXTERIOR · LANDSCAPE · FINISHING · 3D VISUALIZATION</p>
-        <p class="hero-desc">
-          Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture design research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
-        </p>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn-primary">EXPLORE PORTFOLIO</a>
-          <a href="#contact" class="btn-secondary">REQUEST CONSULTATION</a>
+    <h1 class="page-title">Portfolio Projects</h1>
+    <p class="page-desc">Comprehensive architectural and interior design case studies.</p>
+
+    <!-- مشروع 1: السكني -->
+    <section id="residential" class="project-section">
+      <div class="project-header">
+        <div>
+          <h2>Luxury Villa Interior Design</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">Cairo, Egypt · Residential Space</p>
         </div>
+        <span class="category-tag">Residential</span>
       </div>
+      <p class="project-details">
+        Warm Minimalist reception & living spaces featuring custom architectural lighting, concealed coves, and premium finish materials (Wood & SPC paneling).
+      </p>
       
-      <div class="profile-img-frame">
-        <img src="images/profile.jpg" alt="Ibrahim Mourad">
+      <div class="project-gallery">
+        <img src="images/villa-1.jpg" alt="Villa Interior 1">
+        <img src="images/villa-2.jpg" alt="Villa Interior 2">
+        <img src="images/villa-3.jpg" alt="Villa Interior 3">
       </div>
     </section>
 
-    <!-- شبكة الكروت الثلاثة التوضيحية -->
-    <section class="features-grid">
-      <div class="feature-card">
-        <h3 class="script-font">Interior & Exterior Fit-out</h3>
-        <p>Luxury residential villas, corporate offices, and optical retail stores interior/exterior engineered with high accuracy.</p>
-        <a href="projects.html#residential" class="card-btn">LEARN MORE</a>
-      </div>
-
-      <div class="feature-card">
-        <h3 class="script-font">Contemporary Islamic Style</h3>
-        <p>Modern representations of authentic Islamic design elements tailored for luxury homes and cultural monuments.</p>
-        <a href="projects.html#islamic" class="card-btn">VIEW STUDIES</a>
-      </div>
-
-      <div class="feature-card">
-        <h3 class="script-font">BIM & Shop Drawings</h3>
-        <p>Comprehensive Autodesk Revit BIM modeling, mechanical/plumbing coordination, and precise executive drawings.</p>
-        <a href="services.html" class="card-btn">TECHNICAL SCOPE</a>
-      </div>
-    </section>
-
-    <!-- كارت نموذج طلب المشروع السريع -->
-    <section id="contact" class="project-form-card">
-      <h2>Start a Design Project</h2>
-      <p class="form-subtitle">Fill out your project specifications to receive a custom design proposal and BOQ consultation.</p>
-
-      <form onsubmit="event.preventDefault(); alert('Inquiry Sent Successfully!');">
-        <div class="form-grid">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email Address" required>
-          <input type="tel" placeholder="Phone / WhatsApp Number" required>
-          <select required>
-            <option value="" disabled selected>Select Scope of Work</option>
-            <option value="interior">Interior Design & Finishing</option>
-            <option value="exterior">Exterior & Landscape Design</option>
-            <option value="commercial">Commercial Fit-Out</option>
-            <option value="bim">Revit BIM & Shop Drawings</option>
-          </select>
+    <!-- مشروع 2: التجاري -->
+    <section id="commercial" class="project-section">
+      <div class="project-header">
+        <div>
+          <h2>Optical Retail Store Fit-Out</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">27.5 SQM Retail Concept</p>
         </div>
-        <textarea placeholder="Tell us about project location, total area (SQM), budget, and target timeline..."></textarea>
-        <button type="submit" class="btn-submit">SEND INQUIRY PROPOSAL</button>
-      </form>
+        <span class="category-tag">Commercial Fit-Out</span>
+      </div>
+      <p class="project-details">
+        Full commercial fit-out including custom eyewear display units, directional spotlighting, and execution shop drawings.
+      </p>
+      
+      <div class="project-gallery">
+        <img src="images/optical-1.jpg" alt="Optical Store 1">
+        <img src="images/optical-2.jpg" alt="Optical Store 2">
+      </div>
     </section>
+
+    <!-- مشروع 3: المعماري الإسلامي -->
+    <section id="islamic" class="project-section">
+      <div class="project-header">
+        <div>
+          <h2>Contemporary Islamic Architecture</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">Architectural Research & Visualization</p>
+        </div>
+        <span class="category-tag">Islamic Arch</span>
+      </div>
+      <p class="project-details">
+        Modern reinterpretation of traditional geometric motifs, cross-vaulted Mediterranean roofs, and natural light play.
+      </p>
+      
+      <div class="project-gallery">
+        <img src="images/islamic-1.jpg" alt="Islamic Architecture 1">
+        <img src="images/islamic-2.jpg" alt="Islamic Architecture 2">
+      </div>
+    </section>
+
   </div>
 
-  <!-- زر الواتساب العائم أسفل اليمين -->
-  <a href="https://wa.me/" target="_blank" class="whatsapp-float">
-    💬 WhatsApp Direct
-  </a>
-
-  <!-- أكواد حماية الموقع ضد النسخ والتفتيش والتصوير -->
   <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('dragstart', e => e.preventDefault());
