@@ -1,397 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ibrahim Mourad Design | Portfolio</title>
-  <link rel="stylesheet" href="style.css"> <!-- استدعاء ملف التنسيق الخارجي إن وجد -->
-  
+  <title>Ibrahim Mourad Design | Interior, Exterior & Landscape Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
   <style>
-    /* ==================== الأساسيات والتنسيق العام ==================== */
     :root {
-      --bg: #f4f0ea;
-      --card-bg: #ffffff;
-      --text-main: #1a1a1a;
-      --text-muted: #666666;
-      --accent: #2c2a29;
-      --line: #e2ded7;
-      --badge-bg: rgba(0, 0, 0, 0.65);
+      --bg: #e8e2d8;
+      --card-bg: #dfd8cb;
+      --text-dark: #2c251e;
+      --text-muted: #73695d;
+      --accent-brown: #7a5c43;
+      --accent-brown-light: #8f6e52;
+      --line: #d0c7b7;
+      --white: #ffffff;
+      --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
+      min-height: 100vh;
       background-color: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ==================== الهيدر وقائمة التنقل ==================== */
-    header {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--line);
+      padding: 24px 40px;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .brand-logo {
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      font-size: 14px;
-      text-transform: uppercase;
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.04;
+      transform: rotate(-18deg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%232c251e' stroke-width='1.2'%3E%3Crect x='10' y='10' width='220' height='220'/%3E%3Crect x='30' y='30' width='180' height='180' stroke-dasharray='4 4'/%3E%3Cline x1='10' y1='120' x2='230' y2='120'/%3E%3Cline x1='120' y1='10' x2='120' y2='230'/%3E%3Ccircle cx='120' cy='120' r='50'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 240px 240px;
     }
 
+    /* Top Navigation */
     nav {
       display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-main);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .btn-counter {
-      background: #e6e0d8;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-    }
-
-    /* ==================== قسم الهيرو (التعريفي) ==================== */
-    .hero-section {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 40px;
-      align-items: center;
-      padding: 60px 0;
-    }
-
-    .hero-title {
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-
-    .hero-title span {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
-      text-transform: capitalize;
-      display: block;
-      margin-top: -5px;
-      color: #555;
-    }
-
-    .hero-subtitle {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      margin: 15px 0 20px 0;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .hero-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 540px;
-      margin-bottom: 25px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .btn-primary, .btn-secondary {
-      padding: 12px 24px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
-
-    .profile-img-frame {
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      border: 2px solid var(--line);
-      padding: 10px;
-      margin: 0 auto;
-    }
-
-    .profile-img-frame img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    /* ==================== شبكة المشاريع المعروضة ==================== */
-    .featured-header {
-      display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      margin-top: 40px;
-      margin-bottom: 25px;
-    }
-
-    .featured-header h2 {
-      font-size: 22px;
+      align-items: center;
+      font-size: 13px;
       font-weight: 700;
-    }
-
-    .featured-header p {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    /* الشبكة المقسمة إلى 3 أعمدة */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    /* روابط الكروت */
-    .work-card-link {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    /* تصميم الكارت */
-    .work-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
-    }
-
-    /* إطار الصورة المربع المتناسق */
-    .work-img-wrapper {
-      position: relative;
-      width: 100%;
-      height: 220px; /* ارتفاع ثابت يحافظ على نسبة المربع/المستطيل المريح */
-      overflow: hidden;
-      background: #eae5de;
-    }
-
-    .work-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* يمنع التمدد أو التشوه */
-      transition: transform 0.5s ease;
-    }
-
-    .work-card:hover .work-img-wrapper img {
-      transform: scale(1.06);
-    }
-
-    /* شارة التصنيف فوق الصورة */
-    .category-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--badge-bg);
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      backdrop-filter: blur(4px);
-    }
-
-    /* معلومات المشاريـع داخل الكارت */
-    .work-info {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .work-info h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .work-info p {
-      font-size: 12px;
       color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* زر الواتساب العائم */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
       z-index: 1000;
     }
 
-    /* التجاوب مع الشاشات الصغيرة والموبايل */
-    @media (max-width: 992px) {
-      .works-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-section { grid-template-columns: 1fr; text-align: center; }
-      .hero-buttons { justify-content: center; }
+    .brand-logo-text {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: 2px;
     }
 
-    @media (max-width: 600px) {
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links > li { position: relative; }
+
+    .nav-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    .nav-links a:hover, .nav-links > li > a.active { color: var(--accent-brown); }
+
+    .btn-nav-portfolio {
+      background: var(--text-dark);
+      color: var(--white) !important;
+      padding: 10px 20px !important;
+      border-radius: 6px;
+      letter-spacing: 1.5px;
+    }
+
+    .btn-nav-portfolio:hover {
+      background: var(--accent-brown) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Dropdown Menu */
+    .dropdown-content {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background-color: var(--white);
+      min-width: 200px;
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      padding: 8px 0;
+      list-style: none;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      padding: 12px 20px;
+      font-size: 11px;
+      border-bottom: 1px solid #f0f0f0;
+      color: var(--text-muted);
+    }
+
+    .dropdown:hover .dropdown-content {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Hero Section */
+    main {
+      max-width: 1250px;
+      width: 100%;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .brand-title-container { position: relative; display: inline-block; margin-bottom: 36px; padding-bottom: 20px; }
+    .main-name { font-size: 60px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
+    .script-design { font-family: 'Alex Brush', cursive; font-size: 88px; color: var(--accent-brown-light); position: absolute; right: -20px; bottom: -70px; transform: rotate(-9deg); pointer-events: none; }
+    .tagline { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brown); margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .circle-avatar { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-brown); padding: 6px; background: var(--bg); box-shadow: 0 16px 36px rgba(44, 37, 30, 0.12); }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--text-dark);
+      color: var(--text-dark);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--text-dark); color: var(--white); }
+    .btn-primary:hover { background: var(--accent-brown); border-color: var(--accent-brown); }
+
+    /* Gallery Section */
+    .gallery-section { max-width: 1250px; width: 100%; margin: 50px auto; }
+    .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text-dark); }
+    .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .work-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .work-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(44, 37, 30, 0.14); }
+    .work-img-wrapper { position: relative; height: 240px; overflow: hidden; }
+    .work-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .work-card:hover .work-img-wrapper img { transform: scale(1.06); }
+    .category-badge { position: absolute; top: 16px; left: 16px; background: rgba(44, 37, 30, 0.85); color: var(--white); padding: 6px 14px; border-radius: 50px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(4px); }
+    .work-info { padding: 20px; }
+    .work-info h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 6px; }
+    .work-info p { font-size: 12px; color: var(--text-muted); }
+
+    /* Inquiry Section */
+    .inquiry-section { background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 20px; padding: 36px; max-width: 1250px; width: 100%; margin: 0 auto 40px; }
+    .inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .inquiry-form input, .inquiry-form select, .inquiry-form textarea { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); font-family: inherit; font-size: 13px; color: var(--text-dark); }
+    .inquiry-form textarea { grid-column: span 2; height: 100px; resize: vertical; }
+    .inquiry-form button { grid-column: span 2; justify-content: center; }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      padding: 14px 22px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover { transform: scale(1.05); }
+
+    /* Visitor Counter Badge */
+    .visitor-badge {
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 992px) {
+      body { padding: 16px; }
+      nav { flex-direction: column; gap: 16px; text-align: center; }
+      .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+      main { grid-template-columns: 1fr; text-align: center; }
       .works-grid { grid-template-columns: 1fr; }
+      .inquiry-form { grid-template-columns: 1fr; }
+      .inquiry-form textarea, .inquiry-form button { grid-column: span 1; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
+
+  <script src="https://web3forms.com/client/script.js" async defer></script>
 </head>
 <body>
 
-  <div class="container">
+  <!-- Top Navigation -->
+  <nav>
+    <div class="brand-logo-text">RWAQ DESIGN STUDIO</div>
     
-    <!-- ==================== الهيدر ==================== -->
-    <header>
-      <div class="brand-logo">RWAQ DESIGN STUDIO</div>
-      <nav>
-        <a href="index.html">HOME</a>
-        <a href="projects.html">PROJECTS ▾</a>
-        <a href="#services">SERVICES ▾</a>
-        <a href="portfolio.html">PORTFOLIO ▾</a>
-        <a href="#cv">CV</a>
-        <span class="btn-counter">👁 VISITOR COUNTER</span>
-      </nav>
-    </header>
-
-    <!-- ==================== قسم الهيرو ==================== -->
-    <section class="hero-section">
-      <div class="hero-text">
-        <h1 class="hero-title">IBRAHIM MOURAD<br><span>Design</span></h1>
-        <p class="hero-subtitle">INTERIOR · EXTERIOR · LANDSCAPE · FINISHING · 3D VISUALIZATION</p>
-        <p class="hero-desc">
-          Specialized in high-end residential, commercial fit-outs, and contemporary architecture design research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
-        </p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">REQUEST CONSULTATION</a>
-          <a href="projects.html" class="btn-secondary">EXPLORE SELECTED WORKS ↗</a>
-        </div>
-      </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
       
-      <div class="profile-img-frame">
-        <img src="images/profile.jpg" alt="Ibrahim Mourad">
-      </div>
-    </section>
+      <li class="dropdown">
+        <a href="projects.html">Projects ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="projects.html#residential">Residential Design</a></li>
+          <li><a href="projects.html#commercial">Commercial Fit-out</a></li>
+          <li><a href="projects.html#islamic">Islamic Architecture</a></li>
+          <li><a href="projects.html#landscape">Landscape Design</a></li>
+        </ul>
+      </li>
 
-    <!-- ==================== قسم الواجهة للمشاريع الثلاثة ==================== -->
-    <section class="featured-section">
-      <div class="featured-header">
-        <div>
-          <h2>Featured Design Portfolio</h2>
-          <p>High-end interior, commercial fit-outs & architectural studies</p>
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="services.html#interior">Interior Design</a></li>
+          <li><a href="services.html#3d">3D Visualization</a></li>
+          <li><a href="services.html#bim">BIM & Shop Drawings</a></li>
+        </ul>
+      </li>
+
+      <li><a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn-nav-portfolio">Portfolio ↗</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-badge" title="Total Website Visits">
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fibrahimmourad.github.io%2FIbrahim-Mourad-Design&count_bg=%237A5C43&title_bg=%232C251E&icon=&icon_color=%23E7E7E7&title=VISITS&edge_flat=true" alt="Visitor Counter"/>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main>
+    <div class="hero-text">
+      <div class="brand-title-container">
+        <h1 class="main-name">IBRAHIM MOURAD</h1>
+        <span class="script-design">Design</span>
+      </div>
+      <div class="tagline">Interior • Exterior • Landscape • Finishing • 3D Visualization</div>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
+        Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#inquiry" class="btn btn-primary">Request Consultation</a>
+        <a href="#featured-works" class="btn">Explore Selected Works ↓</a>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <img src="2.jpg" alt="Ibrahim Mourad" class="circle-avatar" onerror="this.src='https://via.placeholder.com/320'">
+    </div>
+  </main>
+
+  <!-- Featured Works Showcase -->
+  <section id="featured-works" class="gallery-section">
+    <div class="section-header">
+      <div>
+        <h2>Featured Design Portfolio</h2>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">High-end interior, commercial fit-outs & architectural studies</p>
+      </div>
+      <a href="projects.html" class="btn" style="padding: 8px 16px; font-size: 10px;">View All Projects ↗</a>
+    </div>
+
+    <div class="works-grid">
+      <!-- Project Item 1 -->
+      <div class="work-card">
+        <div class="work-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Luxury Villa Interior">
+          <span class="category-badge">Residential</span>
         </div>
-        <a href="projects.html" class="btn-secondary">VIEW ALL PROJECTS ↗</a>
+        <div class="work-info">
+          <h3>Luxury Villa Interior Design</h3>
+          <p>Warm Minimalist reception & living spaces featuring custom architectural lighting and high-end finishes.</p>
+        </div>
       </div>
 
-      <!-- شبكة المشاريع الثلاثة -->
-      <div class="works-grid">
-
-        <!-- المشروع الأول -->
-        <a href="projects.html#residential" class="work-card-link">
-          <div class="work-card">
-            <div class="work-img-wrapper">
-              <!-- غير صورة الغلاف هنا -->
-              <img src="images/villa-cover.jpg" alt="Luxury Villa Interior">
-              <span class="category-badge">Residential</span>
-            </div>
-            <div class="work-info">
-              <h3>Luxury Villa Interior Design</h3>
-              <p>Warm Minimalist reception & living spaces featuring custom architectural lighting and high-end finishes.</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- المشروع الثاني -->
-        <a href="projects.html#commercial" class="work-card-link">
-          <div class="work-card">
-            <div class="work-img-wrapper">
-              <!-- غير صورة الغلاف هنا -->
-              <img src="images/optical-cover.jpg" alt="Optical Retail Store Fit-Out">
-              <span class="category-badge">Commercial Fit-Out</span>
-            </div>
-            <div class="work-info">
-              <h3>Optical Retail Store Fit-Out</h3>
-              <p>Full commercial store transformation including display units, lighting layouts, and execution shop drawings.</p>
-            </div>
-          </div>
-        </a>
-
-        <!-- المشروع الثالث -->
-        <a href="projects.html#islamic" class="work-card-link">
-          <div class="work-card">
-            <div class="work-img-wrapper">
-              <!-- غير صورة الغلاف هنا -->
-              <img src="images/islamic-cover.jpg" alt="Contemporary Islamic Motifs">
-              <span class="category-badge">Islamic Architecture</span>
-            </div>
-            <div class="work-info">
-              <h3>Contemporary Islamic Motifs</h3>
-              <p>Modern reinterpretation of traditional geometric motifs, roofs, and cross-vaulted architectural geometry.</p>
-            </div>
-          </div>
-        </a>
-
+      <!-- Project Item 2 -->
+      <div class="work-card">
+        <div class="work-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Optical Retail Store Fit-out">
+          <span class="category-badge">Commercial Fit-Out</span>
+        </div>
+        <div class="work-info">
+          <h3>Optical Retail Store Fit-Out</h3>
+          <p>Full commercial store transformation including display units, lighting layouts, and execution shop drawings.</p>
+        </div>
       </div>
-    </section>
 
-  </div>
+      <!-- Project Item 3 -->
+      <div class="work-card">
+        <div class="work-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Contemporary Islamic Architecture">
+          <span class="category-badge">Islamic Architecture</span>
+        </div>
+        <div class="work-info">
+          <h3>Contemporary Islamic Motifs</h3>
+          <p>Modern reinterpretation of traditional geometric motifs and cross-vaulted architectural concepts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- زر الواتساب العائم -->
-  <a href="https://wa.me/" class="whatsapp-btn" target="_blank">💬 Chat On WhatsApp</a>
+  <!-- Project Consultation Form -->
+  <section id="inquiry" class="inquiry-section">
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 24px;">Start a Design Project</h3>
+    <p style="font-size: 13px; color: var(--text-muted);">Fill out your project specifications to receive a custom design proposal and BOQ consultation.</p>
+    
+    <form action="https://api.web3forms.com/submit" method="POST" class="inquiry-form">
+      <input type="hidden" name="access_key" value="c4eaed85-7494-4b33-90e9-31aba9b99aef">
+      <input type="hidden" name="subject" value="New Project Inquiry from Portfolio Website">
+      <input type="hidden" name="redirect" value="https://ibrahimmourad.github.io/">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required>
+      <select name="service_type" required>
+        <option value="" disabled selected>Select Scope of Work</option>
+        <option value="Interior Design">Interior Design & Finishing</option>
+        <option value="Exterior Design">Exterior Architectural Design</option>
+        <option value="Landscape">Landscape & Outdoor</option>
+        <option value="Islamic Design">Contemporary Islamic Design</option>
+        <option value="Full Project Management">Full Contracting & Supervision</option>
+      </select>
+      <textarea name="message" placeholder="Tell us about project location, total area (SQM), budget, and target timeline..." required></textarea>
+      
+      <button type="submit" class="btn btn-primary">Send Inquiry Proposal</button>
+    </form>
+  </section>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float">
+    <span>💬 Chat On WhatsApp</span>
+  </a>
+
+  <footer>
+    <div>Ibrahim Mourad · Rwaq Design Studio</div>
+    <div>Cairo, Egypt · rwaqdesign@gmail.com</div>
+  </footer>
 
 </body>
 </html>
