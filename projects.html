@@ -1,165 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noai, noimageai">
-  <title>Projects Gallery | Ibrahim Mourad Design</title>
   
+  <title>Projects | Ibrahim Mourad Design</title>
+  <meta name="description" content="Detailed portfolio of interior, exterior, and architectural projects by Ibrahim Mourad.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f4f0ea;
-      --card-bg: #ffffff;
-      --text-main: #1a1a1a;
-      --text-muted: #666666;
-      --accent: #2c2a29;
-      --line: #e2ded7;
-      --badge-bg: rgba(0, 0, 0, 0.75);
+      --bg: #e8e2d8;
+      --card-bg: #dfd8cb;
+      --text-dark: #2c251e;
+      --text-muted: #73695d;
+      --accent-brown: #7a5c43;
+      --accent-brown-light: #8f6e52;
+      --line: #d0c7b7;
+      --white: #ffffff;
+      --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
-    body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
-    .brand-logo { font-weight: 700; font-size: 14px; letter-spacing: 1.5px; }
-    nav a { text-decoration: none; color: var(--text-main); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-left: 20px; }
-
-    .page-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
-    .page-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
-
-    /* أقسام ألبومات المشاريع */
-    .project-section {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 32px;
-      border: 1px solid var(--line);
-      margin-bottom: 50px;
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 15px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 15px;
-    }
-
-    .project-header h2 { font-size: 22px; font-weight: 700; }
-    .category-tag { background: var(--bg); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-
-    .project-details { font-size: 13px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.6; }
-
-    /* معرض الصور المتتالية رأسياً بأبعادها الأصلية الكاملة بدون قص */
-    .project-gallery {
+    body {
+      min-height: 100vh;
+      background-color: var(--bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      width: 100%;
+      padding: 24px 40px;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .project-gallery img {
-      width: 100%;
-      height: auto; /* يضمن إظهار الصورة بأبعادها الطبيعية طولي/عرضي/مربع دون اقتطاع */
-      display: block;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      
-      /* حماية الصور عبر CSS */
-      -webkit-user-drag: none;
-      user-select: none;
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      z-index: -1;
       pointer-events: none;
+      opacity: 0.04;
+      transform: rotate(-18deg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%232c251e' stroke-width='1.2'%3E%3Crect x='10' y='10' width='220' height='220'/%3E%3Crect x='30' y='30' width='180' height='180' stroke-dasharray='4 4'/%3E%3Cline x1='10' y1='120' x2='230' y2='120'/%3E%3Cline x1='120' y1='10' x2='120' y2='230'/%3E%3Ccircle cx='120' cy='120' r='50'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 240px 240px;
     }
 
-    @media print { html, body { display: none !important; } }
+    /* Navigation (Identical to Index) */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .brand-logo-text { font-size: 15px; font-weight: 800; color: var(--text-dark); letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links > li { position: relative; }
+    .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 700; transition: all 0.2s; padding: 8px 12px; display: block; }
+    .nav-links a:hover, .nav-links > li > a.active { color: var(--accent-brown); }
+
+    .btn-nav-portfolio { background: var(--text-dark); color: var(--white) !important; padding: 10px 20px !important; border-radius: 6px; letter-spacing: 1.5px; }
+    .btn-nav-portfolio:hover { background: var(--accent-brown) !important; transform: translateY(-2px); }
+
+    .dropdown-content {
+      visibility: hidden; opacity: 0; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+      background-color: var(--white); min-width: 200px; box-shadow: var(--shadow); border-radius: 8px; border: 1px solid var(--line); padding: 8px 0; list-style: none; z-index: 1000; transition: all 0.3s ease; text-align: left;
+    }
+    .dropdown-content a { padding: 12px 20px; font-size: 11px; border-bottom: 1px solid #f0f0f0; color: var(--text-muted); }
+    @media (min-width: 993px) { .dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+    /* Page Header */
+    .page-header { max-width: 1250px; width: 100%; margin: 60px auto 40px; text-align: center; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--text-dark); margin-bottom: 16px; }
+    .page-header p { font-size: 14px; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+    /* Projects Layout */
+    .projects-container { max-width: 1200px; width: 100%; margin: 0 auto 80px; }
+    
+    .category-divider { margin: 80px 0 40px; border-bottom: 2px solid var(--text-dark); padding-bottom: 12px; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 100px;
+      padding-top: 40px; /* Offset for anchor links */
+    }
+
+    /* Alternating layout for even projects */
+    .project-row:nth-of-type(even) .project-image { order: 2; }
+    .project-row:nth-of-type(even) .project-details { order: 1; }
+
+    .project-image { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: #eee; aspect-ratio: 4/3; }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .project-image:hover img { transform: scale(1.05); }
+
+    .project-details h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 16px; color: var(--text-dark); }
+    .project-meta { font-size: 11px; font-weight: 700; color: var(--accent-brown); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; display: block; }
+    .project-details p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.8; }
+    
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .tech-tags span { background: rgba(44, 37, 30, 0.05); border: 1px solid var(--line); padding: 6px 12px; border-radius: 4px; font-size: 10px; font-weight: 700; color: var(--text-dark); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Footer & Float */
+    footer { border-top: 1px solid var(--line); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: auto; }
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; background-color: #25d366; color: #fff; border-radius: 50px; padding: 14px 22px; font-size: 12px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.18); display: flex; align-items: center; gap: 8px; z-index: 1000; transition: transform 0.3s; }
+    .whatsapp-float:hover { transform: scale(1.05); }
+
+    @media (max-width: 992px) {
+      body { padding: 16px; }
+      nav { flex-direction: column; gap: 16px; text-align: center; }
+      .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+      .project-row { grid-template-columns: 1fr; gap: 30px; margin-bottom: 60px; }
+      .project-row:nth-of-type(even) .project-image { order: 1; }
+      .project-row:nth-of-type(even) .project-details { order: 2; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <div class="brand-logo">RWAQ DESIGN STUDIO</div>
-      <nav>
-        <a href="index.html">← Back to Home</a>
-        <a href="services.html">Services</a>
-      </nav>
-    </header>
+  <!-- Top Navigation -->
+  <nav>
+    <div class="brand-logo-text">IBRAHIM MOURAD DESIGN</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="projects.html" class="dropdown-toggle active">Projects ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="#residential">Residential Design</a></li>
+          <li><a href="#commercial">Commercial Fit-out</a></li>
+          <li><a href="#islamic">Islamic Architecture</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="services.html" class="dropdown-toggle">Services ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="services.html#interior">Interior Design</a></li>
+          <li><a href="services.html#3d">3D Visualization</a></li>
+          <li><a href="services.html#bim">BIM & Shop Drawings</a></li>
+        </ul>
+      </li>
+      <li><a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn-nav-portfolio">Portfolio ↗</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
 
-    <h1 class="page-title">Portfolio Projects</h1>
-    <p class="page-desc">Explore full photo galleries and architectural visualization studies for each project.</p>
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Selected Projects</h1>
+    <p>A curated collection of architectural designs, high-end residential interiors, and specialized commercial fit-outs crafted with precision and creativity.</p>
+  </header>
 
-    <!-- ألبوم المشروع 1: السكني -->
-    <section id="residential" class="project-section">
-      <div class="project-header">
-        <div>
-          <h2>Luxury Villa Interior Design</h2>
-          <p style="font-size: 12px; color: var(--text-muted);">Residential Concept · Warm Minimalist</p>
+  <!-- Projects Container -->
+  <main class="projects-container">
+
+    <!-- === RESIDENTIAL CATEGORY === -->
+    <div id="residential" class="category-divider">Residential Interiors</div>
+
+    <!-- Project 1 -->
+    <div class="project-row" id="villa-interior">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Luxury Villa Interior" loading="lazy">
+      </div>
+      <div class="project-details">
+        <span class="project-meta">Interior Design · Warm Minimalist</span>
+        <h2>Luxury Villa Interior</h2>
+        <p>A comprehensive redesign of a high-end residential reception space. The design embraces warm minimalist principles, focusing on spatial simplicity and natural material textures.</p>
+        <p>Special attention was given to architectural lighting psychology, utilizing flat gypsum board ceilings integrated with hidden cove lighting, directional spotlights, and carefully calculated contrast ratios.</p>
+        <div class="tech-tags">
+          <span>3ds Max</span>
+          <span>Corona Renderer</span>
+          <span>AutoCAD</span>
         </div>
-        <span class="category-tag">Residential</span>
       </div>
-      <p class="project-details">
-        Warm Minimalist reception & living spaces featuring custom architectural lighting, concealed cove illumination, and high-end materials (Wood and SPC panels with Vanilla Latte & Breeze paint shades).
-      </p>
-      
-      <!-- المعرض الكامل للصورة (ضع كل صور المشروع هنا) -->
-      <div class="project-gallery">
-        <img src="images/villa-1.jpg" alt="Villa View 1">
-        <img src="images/villa-2.jpg" alt="Villa View 2">
-        <img src="images/villa-3.jpg" alt="Villa View 3">
-        <img src="images/villa-4.jpg" alt="Villa View 4">
-      </div>
-    </section>
+    </div>
 
-    <!-- ألبوم المشروع 2: التجاري -->
-    <section id="commercial" class="project-section">
-      <div class="project-header">
-        <div>
-          <h2>Optical Retail Store Fit-Out</h2>
-          <p style="font-size: 12px; color: var(--text-muted);">Commercial Retail · 27.5 SQM Space</p>
+    <!-- Project 6 -->
+    <div class="project-row" id="bedroom-design">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop" alt="Minimalist Master Bedroom" loading="lazy">
+      </div>
+      <div class="project-details">
+        <span class="project-meta">Interior Design · Finishing Specifications</span>
+        <h2>Minimalist Master Bedroom</h2>
+        <p>A sophisticated master bedroom and integrated bathroom layout tailored for comfort and elegance. The material palette highlights wood and marble replacement panels for decorative wall paneling.</p>
+        <p>Finishing specifications include SPC flooring integration and premium Jotun wall paints in soothing shades like Vanilla Latte and Breeze, paired with LED accent strips for a calm, ambient glow.</p>
+        <div class="tech-tags">
+          <span>Space Planning</span>
+          <span>Revit BIM</span>
+          <span>Material Selection</span>
         </div>
-        <span class="category-tag">Commercial Fit-Out</span>
       </div>
-      <p class="project-details">
-        Full commercial store transformation including tailored eyewear display units, accent spotlighting, and execution shop drawings.
-      </p>
-      
-      <div class="project-gallery">
-        <img src="images/optical-1.jpg" alt="Optical Store 1">
-        <img src="images/optical-2.jpg" alt="Optical Store 2">
-      </div>
-    </section>
+    </div>
 
-    <!-- ألبوم المشروع 3: الإسلامي والمعماري -->
-    <section id="islamic" class="project-section">
-      <div class="project-header">
-        <div>
-          <h2>Contemporary Islamic Architecture</h2>
-          <p style="font-size: 12px; color: var(--text-muted);">Architectural Research & Renders</p>
+
+    <!-- === COMMERCIAL CATEGORY === -->
+    <div id="commercial" class="category-divider">Commercial & Exhibitions</div>
+
+    <!-- Project 2 -->
+    <div class="project-row" id="optical-store">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop" alt="Optical Retail Store Fit-out" loading="lazy">
+      </div>
+      <div class="project-details">
+        <span class="project-meta">Commercial Fit-Out · 27.5 SQM</span>
+        <h2>Optical Retail Store Renovation</h2>
+        <p>A precise spatial transformation for a compact optical retail store (7.2m x 3.8m). The project required meticulous planning to maximize display areas without compromising circulation.</p>
+        <p>Delivered full fit-out specifications, itemized cost estimations, custom display unit designs, and highly detailed execution shop drawings.</p>
+        <div class="tech-tags">
+          <span>Shop Drawings</span>
+          <span>BOQ</span>
+          <span>Retail Design</span>
         </div>
-        <span class="category-tag">Islamic Arch</span>
       </div>
-      <p class="project-details">
-        Modern reinterpretation of traditional geometric motifs, roofs, and cross-vaulted Mediterranean interior geometry.
-      </p>
-      
-      <div class="project-gallery">
-        <img src="images/islamic-1.jpg" alt="Islamic Architecture 1">
-        <img src="images/islamic-2.jpg" alt="Islamic Architecture 2">
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-row" id="exhibition-booth">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1511576661531-b34d7da5d0bb?q=80&w=1200&auto=format&fit=crop" alt="Water Tech Exhibition Booth" loading="lazy">
       </div>
-    </section>
+      <div class="project-details">
+        <span class="project-meta">Exhibition Design · Branding</span>
+        <h2>Water Tech Exhibition Booth</h2>
+        <p>A bespoke exhibition display stand conceptualized for a leading water technology and transportation company. The layout was structured to guide visitor flow while maximizing brand visibility.</p>
+        <p>Integrated dynamic lighting and custom product display podiums to highlight the company's technology solutions effectively within a crowded exhibition hall.</p>
+        <div class="tech-tags">
+          <span>Event Design</span>
+          <span>3D Visualization</span>
+          <span>Brand Integration</span>
+        </div>
+      </div>
+    </div>
 
-  </div>
 
+    <!-- === ARCHITECTURAL CATEGORY === -->
+    <div id="islamic" class="category-divider">Architectural Studies</div>
+
+    <!-- Project 3 -->
+    <div class="project-row" id="islamic-motifs">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Contemporary Islamic Architecture" loading="lazy">
+      </div>
+      <div class="project-details">
+        <span class="project-meta">Research & Concept Design</span>
+        <h2>Contemporary Islamic Motifs</h2>
+        <p>An exploratory design study focused on merging historical architectural traits with contemporary aesthetics. The project analyzes the spatial impact of cross-vaulted Mediterranean and Islamic interiors.</p>
+        <p>Taking inspiration from Ottoman and Mughal design styles, the space features a modern reinterpretation of traditional geometric motifs and grand structural proportions.</p>
+        <div class="tech-tags">
+          <span>Architectural History</span>
+          <span>Concept Art</span>
+          <span>Spatial Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-row" id="memorial-monument">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1574360655845-e6ee5367bece?q=80&w=1200&auto=format&fit=crop" alt="Corporate Memorial Monument" loading="lazy">
+      </div>
+      <div class="project-details">
+        <span class="project-meta">Monument Design · Corporate Identity</span>
+        <h2>Corporate Memorial Monument</h2>
+        <p>An architectural concept design for a monumental structure tailored for corporate representation. The proposal balances aesthetic symbolism with structural stability.</p>
+        <p>The design process involved rigorous background modifications, material viability assessments, and structural integration strategies.</p>
+        <div class="tech-tags">
+          <span>Concept Design</span>
+          <span>Monumental Architecture</span>
+          <span>3D Modeling</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/201030273484" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <span>💬 Chat On WhatsApp</span>
+  </a>
+
+  <footer>
+    <div>Ibrahim Mourad Design</div>
+    <div>Cairo, Egypt · rwaqdesign@gmail.com</div>
+  </footer>
+
+  <!-- Script for Mobile Dropdown Menu -->
   <script>
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('dragstart', e => e.preventDefault());
-    document.addEventListener('keydown', e => {
-      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) || (e.ctrlKey && ['u','s'].includes(e.key.toLowerCase()))) {
-        e.preventDefault();
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 992) {
+            e.preventDefault();
+            const content = this.nextElementSibling;
+            document.querySelectorAll('.dropdown-content').forEach(el => {
+              if (el !== content) el.classList.remove('show-dropdown');
+            });
+            content.classList.toggle('show-dropdown');
+          }
+        });
+      });
     });
-    window.addEventListener('keyup', e => { if (e.key === 'PrintScreen') navigator.clipboard.writeText(''); });
   </script>
 </body>
 </html>
