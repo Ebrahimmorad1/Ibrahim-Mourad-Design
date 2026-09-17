@@ -53,7 +53,7 @@
       line-height: 1.6;
       position: relative;
       overflow-x: hidden;
-      padding: 0;
+      padding: 40px;
     }
 
     body::before {
@@ -81,13 +81,13 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--text-muted);
-      padding: 24px 40px;
+      padding: 20px 0;
       border-bottom: 1px solid var(--line);
       position: relative;
       z-index: 1000;
       max-width: 1330px;
       width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 40px auto;
     }
 
     .brand-logo-text {
@@ -176,43 +176,29 @@
       padding-left: 10px;
     }
 
-    /* Full-Width Hero Section Banner */
-    .hero-banner {
+    /* Hero Card (Limited strictly around Image & Name) */
+    .hero-card {
+      max-width: 1330px;
       width: 100%;
+      margin: 0 auto 50px auto;
       background: rgba(255, 255, 255, 0.38);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      margin: 30px 0 50px 0;
-      padding: 50px 0;
-      box-shadow: 0 10px 30px rgba(44, 37, 30, 0.03);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 16px 36px rgba(44, 37, 30, 0.05);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
     }
 
-   main {
-  max-width: 1250px;
-  width: 100%;
-  margin: 30px auto 50px;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 60px;
-  align-items: center;
-
-  /* تمييز الجزء العلوي بشريط/بانر شبه شفاف */
-  background: rgba(255, 255, 255, 0.20);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 48px 50px;
-  box-shadow: 0 15px 35px rgba(44, 37, 30, 0.05);
-}
-
     .brand-title-container { position: relative; display: inline-block; margin-bottom: 36px; padding-bottom: 20px; }
-    .main-name { font-size: 60px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
-    .script-design { font-family: 'Alex Brush', cursive; font-size: 88px; color: var(--accent-brown-light); position: absolute; right: -20px; bottom: -70px; transform: rotate(-9deg); pointer-events: none; }
-    .tagline { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brown); margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 18px; }
-    .circle-avatar { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-brown); padding: 6px; background: var(--bg); box-shadow: 0 16px 36px rgba(44, 37, 30, 0.12); }
+    .main-name { font-size: 58px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
+    .script-design { font-family: 'Alex Brush', cursive; font-size: 86px; color: var(--accent-brown-light); position: absolute; right: -20px; bottom: -70px; transform: rotate(-9deg); pointer-events: none; }
+    .tagline { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-brown); margin-bottom: 28px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .circle-avatar { width: 310px; height: 310px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-brown); padding: 6px; background: var(--bg); box-shadow: 0 16px 36px rgba(44, 37, 30, 0.12); }
 
     .btn {
       padding: 14px 26px;
@@ -222,7 +208,7 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       text-decoration: none;
-      transition: all 0.10s ease;
+      transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -236,7 +222,7 @@
     .btn-primary:hover { background: var(--accent-brown); border-color: var(--accent-brown); }
 
     /* Gallery Section - Clickable Cards */
-    .gallery-section { max-width: 1330px; width: 100%; margin: 0 auto 50px; padding: 0 40px; }
+    .gallery-section { max-width: 1330px; width: 100%; margin: 0 auto 50px; }
     .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text-dark); }
     .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -266,7 +252,7 @@
     .work-info p { font-size: 12px; color: var(--text-muted); }
 
     /* Inquiry Section */
-    .inquiry-section-wrapper { max-width: 1330px; width: 100%; margin: 0 auto 40px; padding: 0 40px; }
+    .inquiry-section-wrapper { max-width: 1330px; width: 100%; margin: 0 auto 40px; }
     .inquiry-section { background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 20px; padding: 36px; width: 100%; }
     .inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
     
@@ -301,7 +287,7 @@
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 24px 40px;
+      padding: 24px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -316,15 +302,14 @@
     }
 
     @media (max-width: 992px) {
-      nav { flex-direction: column; gap: 16px; text-align: center; padding: 20px; }
+      body { padding: 20px; }
+      nav { flex-direction: column; gap: 16px; text-align: center; padding: 10px 0; }
       .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
-      .hero-banner { padding: 30px 0; }
-      main { grid-template-columns: 1fr; text-align: center; padding: 0 20px; }
-      .gallery-section, .inquiry-section-wrapper { padding: 0 20px; }
+      .hero-card { grid-template-columns: 1fr; text-align: center; padding: 30px 20px; }
       .works-grid { grid-template-columns: 1fr; }
       .inquiry-form { grid-template-columns: 1fr; }
       .form-group.full-width, .inquiry-form button { grid-column: span 1; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px 0; }
     }
   </style>
 
@@ -363,29 +348,27 @@
     </ul>
   </nav>
 
-  <!-- Full-Width Hero Section Banner -->
-  <div class="hero-banner">
-    <main>
-      <div class="hero-text">
-        <div class="brand-title-container">
-          <h1 class="main-name">IBRAHIM MOURAD</h1>
-          <span class="script-design">Design</span>
-        </div>
-        <div class="tagline">Interior • Exterior • Landscape • Finishing • 3D Visualization</div>
-        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
-          Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
-        </p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="#inquiry" class="btn btn-primary">Request Consultation</a>
-          <a href="#featured-works" class="btn">Explore Selected Works ↓</a>
-        </div>
+  <!-- Hero Card (Limited to Name & Photo) -->
+  <main class="hero-card">
+    <div class="hero-text">
+      <div class="brand-title-container">
+        <h1 class="main-name">IBRAHIM MOURAD</h1>
+        <span class="script-design">Design</span>
       </div>
+      <div class="tagline">Interior • Exterior • Landscape • Finishing • 3D Visualization</div>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
+        Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#inquiry" class="btn btn-primary">Request Consultation</a>
+        <a href="#featured-works" class="btn">Explore Selected Works ↓</a>
+      </div>
+    </div>
 
-      <div style="display: flex; justify-content: center;">
-        <img src="2.jpg" alt="Ibrahim Mourad Portrait" width="320" height="320" class="circle-avatar" onerror="this.src='https://via.placeholder.com/320'">
-      </div>
-    </main>
-  </div>
+    <div style="display: flex; justify-content: center;">
+      <img src="2.jpg" alt="Ibrahim Mourad Portrait" width="310" height="310" class="circle-avatar" onerror="this.src='https://via.placeholder.com/310'">
+    </div>
+  </main>
 
   <!-- Featured Works Showcase -->
   <section id="featured-works" class="gallery-section">
@@ -449,7 +432,7 @@
       <!-- Project 5 -->
       <a href="projects.html#memorial-monument" class="work-card">
         <div class="work-img-wrapper">
-          <img src="Memorial Design.jpg" alt="Wattco Saudi Monument" width="400" height="240" loading="lazy">
+          <img src="Memorial Design.jpg" alt="Saudi Co Wattco Monument" width="400" height="240" loading="lazy">
           <span class="category-badge">Monument Design</span>
         </div>
         <div class="work-info">
