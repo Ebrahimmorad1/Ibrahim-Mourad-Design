@@ -243,7 +243,7 @@
     <!-- Card 1 -->
     <div class="project-card" data-category="residential" onclick="openProjectModal('villa-interior')">
       <div class="card-thumb">
-        <img src="villa-1.jpg" alt="Luxury Villa Interior" loading="lazy">
+        <img src="images/villa-1.jpg" alt="Luxury Villa Interior" loading="lazy">
         <span class="card-badge">Residential</span>
       </div>
       <div class="card-body">
@@ -258,7 +258,7 @@
     <!-- Card 2 -->
     <div class="project-card" data-category="commercial" onclick="openProjectModal('la-vida-cafe')">
       <div class="card-thumb">
-        <img src="images/la vida cafe.jpg" alt="La Vida Cafe Kuwait" loading="lazy">
+        <img src="images/la-vida-cafe.jpg" alt="La Vida Cafe Kuwait" loading="lazy">
         <span class="card-badge">Commercial / Facade</span>
       </div>
       <div class="card-body">
@@ -273,7 +273,7 @@
     <!-- Card 3 -->
     <div class="project-card" data-category="islamic" onclick="openProjectModal('islamic-design')">
       <div class="card-thumb">
-        <img src="images/islamic design.jpg" alt="Islamic Interior Design" loading="lazy">
+        <img src="images/islamic-design.jpg" alt="Islamic Interior Design" loading="lazy">
         <span class="card-badge">Islamic Architecture</span>
       </div>
       <div class="card-body">
@@ -288,7 +288,7 @@
     <!-- Card 4 -->
     <div class="project-card" data-category="commercial" onclick="openProjectModal('mavida-office')">
       <div class="card-thumb">
-        <img src="images/office design.jpg" alt="Mavida Commercial Office" loading="lazy">
+        <img src="images/office-design.jpg" alt="Mavida Commercial Office" loading="lazy">
         <span class="card-badge">Commercial Fit-Out</span>
       </div>
       <div class="card-body">
@@ -303,7 +303,7 @@
     <!-- Card 5 -->
     <div class="project-card" data-category="monument" onclick="openProjectModal('wattco-monument')">
       <div class="card-thumb">
-        <img src="images/Memorial Design.jpg" alt="Saudi Co Wattco Monument" loading="lazy">
+        <img src="images/memorial-design.jpg" alt="Saudi Co Wattco Monument" loading="lazy">
         <span class="card-badge">Monument Sculpture</span>
       </div>
       <div class="card-body">
@@ -349,25 +349,25 @@
 
   <!-- Interactive JavaScript Engine -->
   <script>
-    // Project Data Bank (Easily add future projects here!)
+    // Project Data Bank
     const projectsData = {
       'villa-interior': {
         title: 'Luxury Villa Interior',
         category: 'Residential Design',
         desc: 'Warm Modern reception and living spaces emphasizing soft ambient lighting, concealed LED channels, and custom wall paneling in Jotun Vanilla Latte shades combined with natural wood accents.',
-      images: [
-    { src: 'images/villa-1.jpg', caption: 'Main Reception & Seating Area Layout' },
-    { src: 'images/villa-2.jpg', caption: 'Hidden LED Lighting & Ceiling Details' },
-    { src: 'images/villa-3.jpg', caption: 'Living Area & TV Wall Wood Accents' },
-    { src: 'images/villa-4.jpg', caption: 'Perspective View Towards Entrance' }
-  ]
-},
+        images: [
+          { src: 'images/villa-1.jpg', caption: 'Main Reception & Seating Area Layout' },
+          { src: 'images/villa-2.jpg', caption: 'Hidden LED Lighting & Ceiling Details' },
+          { src: 'images/villa-3.jpg', caption: 'Living Area & TV Wall Wood Accents' },
+          { src: 'images/villa-4.jpg', caption: 'Perspective View Towards Entrance' }
+        ]
+      },
       'la-vida-cafe': {
         title: 'La Vida Cafe Kuwait',
         category: 'Architecture & Exterior Design',
         desc: 'Comprehensive exterior facade architecture and interior space planning. Designed to offer a distinctive modern Mediterranean aesthetic with custom nighttime lighting effects.',
         images: [
-          { src: 'images/la vida cafe.jpg', caption: 'Exterior Facade & Architectural Lighting Concept' }
+          { src: 'images/la-vida-cafe.jpg', caption: 'Exterior Facade & Architectural Lighting Concept' }
         ]
       },
       'islamic-design': {
@@ -375,7 +375,7 @@
         category: 'Islamic Architecture Research',
         desc: 'Research-driven interior design integrating traditional Islamic geometric motifs, cross-vaulted ceilings, and modern finishes into sophisticated contemporary spaces.',
         images: [
-          { src: 'images/islamic design.jpg', caption: 'Islamic Geometric Ceiling & Accent Wall Paneling' }
+          { src: 'images/islamic-design.jpg', caption: 'Islamic Geometric Ceiling & Accent Wall Paneling' }
         ]
       },
       'mavida-office': {
@@ -383,7 +383,7 @@
         category: 'Commercial Fit-Out',
         desc: 'An ergonomic corporate workspace designed to provide fluid circulation for staff and visitors with high-end acoustic treatment and lighting balance.',
         images: [
-          { src: 'images/office design.jpg', caption: 'Executive Office & Workstation Spatial View' }
+          { src: 'images/office-design.jpg', caption: 'Executive Office & Workstation Spatial View' }
         ]
       },
       'wattco-monument': {
@@ -391,7 +391,7 @@
         category: 'Monument & Sculpture Design',
         desc: 'Visual identity monument designed for Watco Saudi Arabia. Inspired directly by the company logo geometry with dynamic architectural accent lights.',
         images: [
-          { src: 'images/Memorial Design.jpg', caption: '3D Monument Render & Plaza Integration' }
+          { src: 'images/memorial-design.jpg', caption: '3D Monument Render & Plaza Integration' }
         ]
       },
       'neoclassic-design': {
@@ -430,7 +430,7 @@
       `;
 
       document.getElementById('projectModal').classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.body.style.overflow = 'hidden';
       window.location.hash = projectId;
     }
 
@@ -469,7 +469,7 @@
       if (e.key === 'Escape') closeProjectModal();
     });
 
-    // Auto-open modal if hash exists in URL (e.g. projects.html#villa-interior)
+    // Auto-open modal if hash exists in URL
     window.addEventListener('load', function() {
       const hash = window.location.hash.replace('#', '');
       if (hash && projectsData[hash]) {
