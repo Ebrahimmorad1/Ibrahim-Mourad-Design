@@ -174,29 +174,38 @@
     }
 
     /* Hero Section */
-  <!-- Full-Width Hero Section Banner -->
-  <div class="hero-banner">
-    <main>
-      <div class="hero-text">
-        <div class="brand-title-container">
-          <h1 class="main-name">IBRAHIM MOURAD</h1>
-          <span class="script-design">Design</span>
-        </div>
-        <div class="tagline">Interior • Exterior • Landscape • Finishing • 3D Visualization</div>
-        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
-          Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
-        </p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="#inquiry" class="btn btn-primary">Request Consultation</a>
-          <a href="#featured-works" class="btn">Explore Selected Works ↓</a>
-        </div>
-      </div>
+ /* Hero Banner بعرض الشاشة بالكامل وشفافية عالية */
+    .hero-banner {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      
+      /* درجة شفافية ناعمة جداً (18%) مع ضبابية الخشب/الزجاج */
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      
+      /* خطوط تحديد ناعمة من الأعلى والأسفل فقط */
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-top: 24px;
+      margin-bottom: 50px;
+      padding: 48px 0;
+    }
 
-      <div style="display: flex; justify-content: center;">
-        <img src="2.jpg" alt="Ibrahim Mourad Portrait" width="320" height="320" class="circle-avatar" onerror="this.src='https://via.placeholder.com/320'">
-      </div>
-    </main>
-  </div>
+    main {
+      max-width: 1250px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
 
     .brand-title-container { position: relative; display: inline-block; margin-bottom: 36px; padding-bottom: 20px; }
     .main-name { font-size: 60px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
