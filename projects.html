@@ -20,6 +20,7 @@
       --accent-brown: #7a5c43;
       --accent-brown-light: #8f6e52;
       --line: #d0c7b7;
+      --white: #ffffff;
       --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
     }
 
@@ -46,6 +47,8 @@
       color: var(--text-muted);
       padding: 20px 0;
       border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 1000;
       max-width: 1330px;
       width: 100%;
       margin: 0 auto 40px auto;
@@ -53,7 +56,8 @@
 
     .brand-logo-text { font-size: 15px; font-weight: 800; color: var(--text-dark); letter-spacing: 2px; }
     .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-    .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 700; transition: all 0.2s; padding: 8px 12px; }
+    .nav-links > li { position: relative; }
+    .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 700; transition: all 0.2s; padding: 8px 12px; display: block; }
     .nav-links a:hover, .nav-links a.active { color: var(--accent-brown); }
 
     .btn-nav-portfolio {
@@ -62,6 +66,49 @@
       padding: 10px 20px !important;
       border-radius: 6px;
       letter-spacing: 1.5px;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-content {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background-color: var(--white);
+      min-width: 230px;
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      padding: 8px 0;
+      list-style: none;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      padding: 10px 18px;
+      font-size: 11px;
+      border-bottom: 1px solid #f0f0f0;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0.5px;
+    }
+
+    .dropdown-content a:hover {
+      color: var(--accent-brown);
+      background: #faf8f5;
+    }
+
+    @media (min-width: 993px) {
+      .dropdown:hover .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
     }
 
     /* Page Header */
@@ -107,7 +154,7 @@
       border-radius: 24px;
       padding: 40px;
       box-shadow: var(--shadow);
-      scroll-margin-top: 40px; /* Offset for smooth scroll anchors */
+      scroll-margin-top: 40px;
     }
 
     .project-header {
@@ -145,12 +192,12 @@
       line-height: 1.7;
     }
 
-    /* Natural Aspect Ratio Image Gallery Grid */
+    /* Natural Aspect Ratio Gallery Grid */
     .project-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 24px;
-      align-items: start; /* CRITICAL: Allows natural vertical (portrait) & horizontal (landscape) height */
+      align-items: start;
     }
 
     .gallery-item {
@@ -167,10 +214,9 @@
       box-shadow: 0 18px 36px rgba(44, 37, 30, 0.12);
     }
 
-    /* Natural Image Display (No forced crop) */
     .gallery-item img {
       width: 100%;
-      height: auto; /* Preserves natural proportions */
+      height: auto;
       display: block;
       object-fit: contain;
     }
@@ -212,13 +258,30 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Navigation with Direct Dropdown Links -->
   <nav>
     <a href="index.html" class="brand-logo-text" style="text-decoration: none;">IBRAHIM MOURAD DESIGN</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li class="dropdown">
+        <a href="projects.html" class="active">Projects ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="projects.html#villa-interior">Luxury Villa Interior</a></li>
+          <li><a href="projects.html#la-vida-cafe">La Vida Cafe Kuwait</a></li>
+          <li><a href="projects.html#islamic-design">Islamic Interior Design</a></li>
+          <li><a href="projects.html#mavida-office">Mavida Commercial Office</a></li>
+          <li><a href="projects.html#wattco-monument">Saudi Co Wattco Monument</a></li>
+          <li><a href="projects.html#neoclassic-design">Neo Classic Interior Design</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="services.html#interior">Interior Design</a></li>
+          <li><a href="services.html#3d">3D Visualization</a></li>
+          <li><a href="services.html#bim">BIM & Shop Drawings</a></li>
+        </ul>
+      </li>
       <li><a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn-nav-portfolio">Portfolio ↗</a></li>
       <li><a href="cv.pdf" target="_blank">CV</a></li>
     </ul>
@@ -227,7 +290,7 @@
   <!-- Page Header -->
   <header class="page-header">
     <h1>Project Galleries & Case Studies</h1>
-    <p>Explore full architectural visualizations, shop drawings, and execution details for residential and commercial spaces in their full natural proportions.</p>
+    <p>Explore full architectural visualizations, shop drawings, and execution details in their full natural proportions.</p>
   </header>
 
   <!-- Projects Container -->
@@ -247,7 +310,6 @@
           <img src="images/residential.jpg" alt="Villa Reception Design" loading="lazy">
           <div class="gallery-caption">Main Reception & Seating Area</div>
         </div>
-        <!-- يمكنك إضافة أي صور إضافية لهذا المشروع في نفس المجلد وتضمينها هنا بنفس الطريقة -->
       </div>
     </article>
 
