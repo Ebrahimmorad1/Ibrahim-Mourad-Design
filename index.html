@@ -174,15 +174,24 @@
     }
 
     /* Hero Section */
-    main {
-      max-width: 1250px;
-      width: 100%;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
-      align-items: center;
-    }
+   main {
+  max-width: 1250px;
+  width: 100%;
+  margin: 30px auto 50px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+
+  /* تمييز الجزء العلوي بشريط/بانر شبه شفاف */
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 48px 50px;
+  box-shadow: 0 15px 35px rgba(44, 37, 30, 0.05);
+}
 
     .brand-title-container { position: relative; display: inline-block; margin-bottom: 36px; padding-bottom: 20px; }
     .main-name { font-size: 60px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
