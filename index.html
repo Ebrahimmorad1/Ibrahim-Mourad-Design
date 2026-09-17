@@ -174,24 +174,29 @@
     }
 
     /* Hero Section */
-   main {
-  max-width: 1250px;
-  width: 100%;
-  margin: 30px auto 50px;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 60px;
-  align-items: center;
+  <!-- Full-Width Hero Section Banner -->
+  <div class="hero-banner">
+    <main>
+      <div class="hero-text">
+        <div class="brand-title-container">
+          <h1 class="main-name">IBRAHIM MOURAD</h1>
+          <span class="script-design">Design</span>
+        </div>
+        <div class="tagline">Interior • Exterior • Landscape • Finishing • 3D Visualization</div>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
+          Specialized in high-end residential, commercial fit-outs, and contemporary Islamic architecture research. Providing end-to-end design solutions backed by Revit BIM technology and rigorous quality control.
+        </p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#inquiry" class="btn btn-primary">Request Consultation</a>
+          <a href="#featured-works" class="btn">Explore Selected Works ↓</a>
+        </div>
+      </div>
 
-  /* تمييز الجزء العلوي بشريط/بانر شبه شفاف */
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 48px 50px;
-  box-shadow: 0 15px 35px rgba(44, 37, 30, 0.05);
-}
+      <div style="display: flex; justify-content: center;">
+        <img src="2.jpg" alt="Ibrahim Mourad Portrait" width="320" height="320" class="circle-avatar" onerror="this.src='https://via.placeholder.com/320'">
+      </div>
+    </main>
+  </div>
 
     .brand-title-container { position: relative; display: inline-block; margin-bottom: 36px; padding-bottom: 20px; }
     .main-name { font-size: 60px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; line-height: 1.0; }
