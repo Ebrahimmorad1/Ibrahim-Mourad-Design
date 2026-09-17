@@ -1,149 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noai, noimageai">
-  <title>Services | Ibrahim Mourad Design</title>
   
+  <title>Design & BIM Services | Ibrahim Mourad Design</title>
+  <meta name="description" content="Interior design, 3D visualization, Revit BIM shop drawings, and full site supervision services by Ibrahim Mourad.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f4f0ea;
+      --bg: #e8e2d8;
       --card-bg: #ffffff;
-      --text-main: #1a1a1a;
-      --text-muted: #666666;
-      --accent: #2c2a29;
-      --line: #e2ded7;
+      --text-dark: #2c251e;
+      --text-muted: #73695d;
+      --accent-brown: #7a5c43;
+      --accent-brown-light: #8f6e52;
+      --line: #d0c7b7;
+      --shadow: 0 20px 40px rgba(44, 37, 30, 0.08);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
-    body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
-    .brand-logo { font-weight: 700; font-size: 14px; letter-spacing: 1.5px; }
-    nav a { text-decoration: none; color: var(--text-main); font-size: 12px; font-weight: 600; text-transform: uppercase; margin-left: 20px; }
+    body {
+      min-height: 100vh;
+      background-color: var(--bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      padding: 40px;
+      line-height: 1.6;
+    }
 
-    .page-title { font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
-    .page-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 40px; }
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      max-width: 1330px;
+      width: 100%;
+      margin: 0 auto 40px auto;
+    }
 
-    /* شبكة الخدمات */
+    .brand-logo-text { font-size: 15px; font-weight: 800; color: var(--text-dark); letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 700; transition: all 0.2s; padding: 8px 12px; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent-brown); }
+
+    .btn-nav-portfolio {
+      background: var(--text-dark);
+      color: #fff !important;
+      padding: 10px 20px !important;
+      border-radius: 6px;
+      letter-spacing: 1.5px;
+    }
+
+    .page-header {
+      max-width: 1330px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.38);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
     .services-grid {
+      max-width: 1330px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 60px;
+      gap: 30px;
     }
 
     .service-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 30px;
+      background: rgba(255, 255, 255, 0.65);
       border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .service-icon { font-size: 28px; margin-bottom: 16px; }
-    .service-card h3 { font-size: 18px; margin-bottom: 12px; }
-    .service-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-    .service-list { list-style: none; font-size: 12px; color: var(--text-main); font-weight: 600; }
-    .service-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-
-    .cta-box {
-      background: var(--accent);
-      color: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: var(--text-dark);
     }
 
-    .cta-box h2 { font-size: 24px; margin-bottom: 10px; }
-    .cta-box p { font-size: 13px; color: #ccc; margin-bottom: 20px; }
-    .cta-btn { background: #ffffff; color: var(--accent); text-decoration: none; padding: 12px 24px; border-radius: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .service-card ul {
+      list-style: none;
+      margin-top: 16px;
+    }
 
-    @media (max-width: 992px) { .services-grid { grid-template-columns: 1fr; } }
+    .service-card li {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .service-card li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--accent-brown);
+    }
+
+    .btn-consult {
+      margin-top: 24px;
+      text-align: center;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--text-dark);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+
+    .btn-consult:hover {
+      background: var(--accent-brown);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      max-width: 1330px;
+      width: 100%;
+      margin: 60px auto 0 auto;
+    }
+
+    @media (max-width: 992px) {
+      body { padding: 20px; }
+      nav { flex-direction: column; gap: 16px; text-align: center; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <div class="brand-logo">RWAQ DESIGN STUDIO</div>
-      <nav>
-        <a href="index.html">← Back to Home</a>
-        <a href="projects.html">Projects</a>
-      </nav>
-    </header>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="brand-logo-text" style="text-decoration: none;">IBRAHIM MOURAD DESIGN</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="https://heyzine.com/flip-book/01c2ffbeec.html#page/1" target="_blank" class="btn-nav-portfolio">Portfolio ↗</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
 
-    <h1 class="page-title">Design Services</h1>
-    <p class="page-desc">Comprehensive architectural, interior, and technical execution solutions.</p>
+  <header class="page-header">
+    <h1>Design & Engineering Services</h1>
+    <p>From initial concept sketches to technical BIM shop drawings and Bill of Quantities (BOQ).</p>
+  </header>
 
-    <div class="services-grid">
-
-      <!-- خدمة 1 -->
-      <div id="interior" class="service-card">
-        <div>
-          <div class="service-icon">🏛️</div>
-          <h3>Interior & Finishing Design</h3>
-          <p>Full interior layout development, mood boards, material selection (marble/wood alternatives, SPC, Jotun paints), and lighting design psychology.</p>
-        </div>
-        <ul class="service-list">
-          <li>✓ Residential Living & Bedrooms</li>
-          <li>✓ Commercial Stores & Fit-Outs</li>
-          <li>✓ Custom Furniture & Millwork</li>
+  <main class="services-grid">
+    <!-- Service 1 -->
+    <div id="interior" class="service-card">
+      <div>
+        <h3>Interior & Landscape Design</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Custom high-end spatial concepts tailored for residential villas, commercial retail, and hospitality spaces.</p>
+        <ul>
+          <li>Warm Minimalist & Neo-Classic Aesthetics</li>
+          <li>Architectural Ceiling & Lighting Studies</li>
+          <li>Material Board & Color Selection (Jotun, Wood Panels)</li>
+          <li>Landscape & Outdoor Seating Layouts</li>
         </ul>
       </div>
-
-      <!-- خدمة 2 -->
-      <div id="3d" class="service-card">
-        <div>
-          <div class="service-icon">🖼️</div>
-          <h3>3D Visualization & Renders</h3>
-          <p>High-end architectural renders using 3ds Max & Corona Renderer, bringing exact lighting contrast and natural textures to life before construction.</p>
-        </div>
-        <ul class="service-list">
-          <li>✓ Photorealistic Interior Renders</li>
-          <li>✓ Exterior Architectural Elevation</li>
-          <li>✓ Landscape & Outdoor Spaces</li>
-        </ul>
-      </div>
-
-      <!-- خدمة 3 -->
-      <div id="bim" class="service-card">
-        <div>
-          <div class="service-icon">📐</div>
-          <h3>BIM & Technical Shop Drawings</h3>
-          <p>Detailed architectural working drawings using Revit & AutoCAD, material BOQs, and exact spatial plans ready for site contractors.</p>
-        </div>
-        <ul class="service-list">
-          <li>✓ Ceiling & Lighting Layouts</li>
-          <li>✓ Plumbing & Tile Alignment Plans</li>
-          <li>✓ Full Bill of Quantities (BOQ)</li>
-        </ul>
-      </div>
-
+      <a href="index.html#inquiry" class="btn-consult">Request Interior Consultation</a>
     </div>
 
-    <!-- صندوق طلب الاستشارة -->
-    <div class="cta-box">
-      <h2>Have a Project in Mind?</h2>
-      <p>Let's discuss your project scope, area, and estimated budget to prepare a custom design proposal.</p>
-      <a href="index.html#inquiry" class="cta-btn">Request Project Proposal ↗</a>
+    <!-- Service 2 -->
+    <div id="3d" class="service-card">
+      <div>
+        <h3>3D Architectural Visualization</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Photorealistic 3D rendering with precise lighting simulation and material texturing.</p>
+        <ul>
+          <li>3ds Max & Corona Renderer High-Res Visuals</li>
+          <li>Daylight & Ambient Night Lighting Studies</li>
+          <li>Interior & Exterior Facade Renders</li>
+          <li>Virtual Walkthrough & Presentation Layouts</li>
+        </ul>
+      </div>
+      <a href="index.html#inquiry" class="btn-consult">Request 3D Renders</a>
     </div>
 
-  </div>
+    <!-- Service 3 -->
+    <div id="bim" class="service-card">
+      <div>
+        <h3>BIM & Shop Drawings</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Fully accurate technical execution drawings created via Revit & AutoCAD for precise site implementation.</p>
+        <ul>
+          <li>Revit Building Information Modeling (BIM)</li>
+          <li>Detailed Flooring & Tiling Shop Drawings</li>
+          <li>Electrical, Lighting & Plumbing Routing Plans</li>
+          <li>Itemized BOQ & Cost Estimations</li>
+        </ul>
+      </div>
+      <a href="index.html#inquiry" class="btn-consult">Request Technical Drawings</a>
+    </div>
+  </main>
 
-  <script>
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('dragstart', e => e.preventDefault());
-    document.addEventListener('keydown', e => {
-      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) || (e.ctrlKey && ['u','s'].includes(e.key.toLowerCase()))) {
-        e.preventDefault();
-      }
-    });
-    window.addEventListener('keyup', e => { if (e.key === 'PrintScreen') navigator.clipboard.writeText(''); });
-  </script>
+  <footer>
+    <div>Ibrahim Mourad Design</div>
+    <div>Cairo, Egypt · rwaqdesign@gmail.com</div>
+  </footer>
+
 </body>
 </html>
